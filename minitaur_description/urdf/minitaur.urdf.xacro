@@ -1,0 +1,609 @@
+<?xml version="1.0" ?>
+<!-- ======================================================================= -->
+<!--LICENSE:                                                                 -->
+<!--Copyright (c) 2017, Erwin Coumans                                        -->
+<!--Google Inc.                                                              -->
+<!--All rights reserved.                                                     -->
+<!--                                                                         -->
+<!--Redistribution and use in source and binary forms, with or without       -->
+<!--modification, are permitted provided that the following conditions are   -->
+<!--met:                                                                     -->
+<!--                                                                         -->
+<!--1. Redistributions or derived work must retain this copyright notice,    -->
+<!--   this list of conditions and the following disclaimer.                 -->
+<!--                                                                         -->
+<!--2. Redistributions in binary form must reproduce the above copyright     -->
+<!--   notice, this list of conditions and the following disclaimer in the   -->
+<!--   documentation and/or other materials provided with the distribution.  -->
+<!--                                                                         -->
+<!--THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  -->
+<!--IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,-->
+<!--THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR   -->
+<!--PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR        -->
+<!--CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,    -->
+<!--EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,      -->
+<!--PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR       -->
+<!--PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF   -->
+<!--LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING     -->
+<!--NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS       -->
+<!--SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             -->
+<!--                                                                         -->
+<!-- Converted to xacro by Tom Jacobs <tom.jacobs@ghostrobotics.io>          -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="minitaur">
+
+	<!-- Define parameters -->
+	<xacro:property name="bodyLength" value="0.33"/>
+	<xacro:property name="bodyWidth" value="0.1855"/>
+	<xacro:property name="bodyHeight" value="0.08"/>
+	<xacro:property name="bodySideLength" value="0.17"/>
+	<xacro:property name="bodySideWidth" value="0.10"/>
+	<xacro:property name="bodySideHeight" value="0.05"/>
+	<xacro:property name="bodyMass" value="3.516"/>        <!-- 7.18kg minitaur total weight - 0.016*4 - 0.10*8 - 0.25*8 - 0.05*8 - 0.05*8 = 3.516 --> 
+	<xacro:property name="frameMass" value="0.16"/>        <!-- * 4 frames -->
+	<xacro:property name="motorModuleMass" value="0.10"/>  <!-- * 8 motor modules -->
+	<xacro:property name="motorMass" value="0.25"/>        <!-- * 8 motors -->
+	<xacro:property name="upperLegMass" value="0.05"/>     <!-- * 8 upper legs -->
+	<xacro:property name="lowerLegMass" value="0.05"/>     <!-- * 8 lower legs -->
+	<xacro:property name="toeMass" value="0.01"/>
+	<xacro:property name="chassisLength" value="0.34"/>
+	<xacro:property name="chassisWidth" value="0.01"/>
+	<xacro:property name="chassisHeight" value="0.04"/>
+	<xacro:property name="motorLength" value="0.021"/>
+	<xacro:property name="motorRadius" value="0.0425"/>
+	<xacro:property name="upperLegWidth" value="0.039"/>
+	<xacro:property name="upperLegHeight" value="0.008"/>
+	<xacro:property name="upperLegLength" value="0.1"/>
+	<xacro:property name="lowerLegWidth" value="0.017"/>
+	<xacro:property name="lowerLegHeight" value="0.009"/>
+	<xacro:property name="lowerLegLength" value="0.2"/>
+	<xacro:property name="lowerLegLengthToe" value="0.248"/>
+	<xacro:property name="toeRadius" value="0.015"/>
+	<xacro:property name="toeStiffness" value="30000.0"/>
+	<xacro:property name="toeDamping" value="1000.0"/>
+	<xacro:property name="toeSpinningFriction" value="0.3"/>
+	<xacro:property name="toeLateralFriction" value="0.7"/>
+
+	<!-- Define materials -->
+	<material name="black">
+		<color rgba="0.3 0.3 0.3 1"/>
+	</material>
+	<material name="grey">
+		<color rgba="0.5 0.5 0.5 1"/>
+	</material>
+	<material name="frameGrey">
+		<color rgba="0.55 0.55 0.55 1"/>
+	</material>
+	<material name="legGrey">
+		<color rgba="0.65 0.65 0.75 1"/>
+	</material>
+	<material name="motor">
+		<color rgba="0.2 0.2 0.2 1"/>
+	</material>
+
+	<!-- Body -->
+	<link name="base_chassis_link">
+		<visual>
+			<geometry>
+				<box size="${bodyLength} ${bodyWidth} ${bodyHeight}"/>
+			</geometry>
+			<material name="black"/>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.10 -0.014"/>
+			<geometry>
+				<box size="${bodySideLength} ${bodySideWidth} ${bodySideHeight}"/>
+			</geometry>
+			<material name="black"/>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="0 -0.10 -0.014"/>
+			<geometry>
+				<box size="${bodySideLength} ${bodySideWidth} ${bodySideHeight}"/>
+			</geometry>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<box size="${bodyLength} ${bodyWidth} ${bodyHeight}"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0.10 -0.014"/>
+			<geometry>
+				<box size="${bodySideLength} ${bodySideWidth} ${bodySideHeight}"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 -0.10 -0.014"/>
+			<geometry>
+				<box size="${bodySideLength} ${bodySideWidth} ${bodySideHeight}"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="${bodyMass}"/>
+			<!-- https://en.wikipedia.org/wiki/List_of_moments_of_inertia Solid Cuboid -->
+			<inertia ixx="${bodyMass*(bodyWidth*bodyWidth + bodyHeight*bodyHeight)/12}" ixy="0.0" ixz="0.0" 
+					 iyy="${bodyMass*(bodyLength*bodyLength + bodyHeight*bodyHeight)/12}" iyz="0.0"
+					 izz="${bodyMass*(bodyLength*bodyLength + bodyWidth*bodyWidth)/12}"/>
+		</inertial>
+	</link>
+
+	<!-- Frame -->
+	<link name="frame1">
+		<visual>
+			<origin rpy="0 0 0" xyz="-0.22 0 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+			<material name="frameGrey"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="-0.22 0 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 -0.03 0"/>
+			<mass value="${frameMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="frame1_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="frame1"/>
+		<origin rpy="0 0 0" xyz=".2375 -0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="frame2">
+		<visual>
+			<origin rpy="0 0 0" xyz="-0.22 0 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+			<material name="frameGrey"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="-0.22 0 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<mass value="${frameMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="frame2_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="frame2"/>
+		<origin rpy="0 0 0" xyz=".2375 0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="frame3">
+		<visual>
+			<origin rpy="0 0 0" xyz="0.22 0.055 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+			<material name="frameGrey"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0.22 0.055 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 -0.03 0"/>
+			<mass value="${frameMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="frame3_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="frame3"/>
+		<origin rpy="0 0 0" xyz="-.2375 -0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="frame4">
+		<visual>
+			<origin rpy="0 0 0" xyz="0.22 -0.055 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+			<material name="frameGrey"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0.22 -0.055 0"/>
+			<geometry>
+				<box size="0.468 .012 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<mass value="${frameMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="frame4" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="frame4"/>
+		<origin rpy="0 0 0" xyz="-.2375 0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+
+	<!-- Inside motor module boxes -->
+	<link name="chassis_right">
+		<visual>
+			<origin rpy="0 0 0" xyz=".2375 .049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="-.2375 .049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz=".2375 .049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin rpy="0 0 0" xyz="-.2375 .049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="${motorModuleMass*2}"/>
+			<inertia ixx=".004147" ixy=".0" ixz=".0" iyy=".040913" iyz=".0" izz=".041840"/>
+		</inertial>
+	</link>
+	<joint name="chassis_right_center" type="fixed">
+		<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="chassis_right"/>
+		<origin rpy="0 0 0" xyz="0 -.1265 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="chassis_left">
+		<visual>
+			<origin rpy="0 0 0" xyz=".2375 -.049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<visual>
+			<origin rpy="0 0 0" xyz="-.2375 -.049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz=".2375 -.049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<collision>
+			<origin rpy="0 0 0" xyz="-.2375 -.049 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="${motorModuleMass*2}"/>
+			<inertia ixx=".004147" ixy=".0" ixz=".0" iyy=".040913" iyz=".0" izz=".041840"/>
+		</inertial>
+	</link>
+	<joint name="chassis_left_center" type="fixed">
+		<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="chassis_left"/>
+		<origin rpy="0 0 0" xyz="0 .1265 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	
+	<!-- Outside motor module boxes -->
+	<link name="motor_front_rightR_bracket_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 -0.02 0"/>
+			<geometry>
+				<box size="0.068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 -0.02 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 -0.03 0"/>
+			<mass value="${motorModuleMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="motor_front_rightR_bracket_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="motor_front_rightR_bracket_link"/>
+		<origin rpy="0 0 0" xyz=".2375 -0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="motor_front_leftL_bracket_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<geometry>
+				<box size="0.068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<mass value="${motorModuleMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="motor_front_leftL_bracket_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="motor_front_leftL_bracket_link"/>
+		<origin rpy="0 0 0" xyz=".2375 0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="motor_back_rightR_bracket_link">
+	<visual>
+			<origin rpy="0 0 0" xyz="0 -0.02 0"/>
+			<geometry>
+				<box size="0.068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 -0.02 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 -0.03 0"/>
+			<mass value="${motorModuleMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="motor_back_rightR_bracket_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="motor_back_rightR_bracket_link"/>
+		<origin rpy="0 0 0" xyz="-.2375 -0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+	<link name="motor_back_leftL_bracket_link">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<geometry>
+				<box size="0.068 .032 .050"/>
+			</geometry>
+			<material name="motor"/>
+		</visual>
+		<collision>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<geometry>
+				<box size=".068 .032 .050"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0.02 0"/>
+			<mass value="${motorModuleMass}"/>
+			<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+		</inertial>
+	</link>
+	<joint name="motor_back_leftL_bracket_joint" type="fixed">
+	  	<axis xyz="0 0 1"/>
+		<parent link="base_chassis_link"/>
+		<child link="motor_back_leftL_bracket_link"/>
+		<origin rpy="0 0 0" xyz="-.2375 0.154 -.0185"/>
+		<limit effort="100" velocity="100"/>
+		<joint_properties damping=".0" friction=".0"/>
+	</joint>
+
+	<!-- Define our motor macro -->
+	<xacro:macro name="motor" params="jointNumber location side LR originRPY originXYZ chassis axis">
+		<link name="motor_${location}_${side}${LR}_link">
+			<visual>
+				<geometry>
+					<mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+				</geometry>
+				<material name="motor"/>
+			</visual>
+			<collision>
+				<geometry>
+					<cylinder length="${motorLength}" radius="${motorRadius}"/>
+				</geometry>
+			</collision>
+			<inertial>
+				<mass value="${motorMass}"/>
+				<inertia ixx=".00011397" ixy=".0" ixz=".0" iyy=".00011397" iyz=".0" izz=".00021765"/>
+			</inertial>
+		</link>
+		<joint name="${jointNumber}" type="continuous">
+			<axis xyz="${axis}"/>
+			<parent link="${chassis}"/>
+			<child link="motor_${location}_${side}${LR}_link"/>
+			<origin rpy="${originRPY}" xyz="${originXYZ}"/>
+			<limit effort="100" velocity="100"/>
+			<joint_properties damping="0.0" friction="0.0"/>
+		</joint>
+	</xacro:macro>
+
+	<!-- Motors -->
+	<xacro:motor jointNumber="5" location="front" side="right" LR="R" originRPY="1.57075 0 0" originXYZ="0 0 0" chassis="motor_front_rightR_bracket_link" axis="0 0 1"/>
+	<xacro:motor jointNumber="4" location="front" side="right" LR="L" originRPY="1.57075 0 0" originXYZ=".2375 .0275 0" chassis="chassis_right" axis="0 0 -1"/>
+	
+	<xacro:motor jointNumber="0" location="front" side="left"  LR="L" originRPY="1.57075 0 0" originXYZ="0 0 0" chassis="motor_front_leftL_bracket_link" axis="0 0 -1"/>
+	<xacro:motor jointNumber="1" location="front" side="left"  LR="R" originRPY="1.57075 0 0" originXYZ=".2375 -.0275 0" chassis="chassis_left" axis="0 0 1"/>
+	
+	<xacro:motor jointNumber="7" location="back"  side="right" LR="R" originRPY="1.57075 0 0" originXYZ="0 0 0" chassis="motor_back_rightR_bracket_link" axis="0 0 1"/>
+	<xacro:motor jointNumber="6" location="back"  side="right" LR="L" originRPY="1.57075 0 0" originXYZ="-.2375 .0275 0" chassis="chassis_right" axis="0 0 -1"/>
+	
+	<xacro:motor jointNumber="2" location="back"  side="left"  LR="L" originRPY="1.57075 0 0" originXYZ="0 0 0" chassis="motor_back_leftL_bracket_link" axis="0 0 -1"/>
+	<xacro:motor jointNumber="3" location="back"  side="left"  LR="R" originRPY="1.57075 0 0" originXYZ="-.2375 -.0275 0" chassis="chassis_left" axis="0 0 1"/>
+
+	<!-- Define our upper leg macro -->
+	<xacro:macro name="upperLeg" params="location hip xyz">
+		<link name="upper_leg_${location}_link">
+			<visual>
+				<geometry>
+					<box size="${upperLegWidth} ${upperLegHeight} ${upperLegLength}"/>
+				</geometry>
+				<material name="legGrey"/>
+			</visual>
+			<collision>
+				<geometry>
+					<box size="${upperLegWidth} ${upperLegHeight} ${upperLegLength}"/>
+				</geometry>
+			</collision>
+			<inertial>
+				<mass value="${upperLegMass}"/>
+				<inertia ixx=".000038770" ixy=".0" ixz=".0" iyy=".000042198" iyz=".0" izz=".0000036030"/>
+			</inertial>
+		</link>
+		<joint name="${hip}_${location}_link" type="fixed">
+			<axis xyz="0 0 1"/>
+			<parent link="motor_${location}_link"/>
+			<child link="upper_leg_${location}_link"/>
+			<origin rpy="-1.57075 0 0" xyz="${xyz}"/>
+			<limit effort="100" velocity="100"/>
+			<joint_properties damping="0.0" friction="0.0"/>
+		</joint>
+	</xacro:macro>
+
+	<!-- Define our lower leg macro -->
+	<xacro:macro name="lowerLeg" params="jointNumber location lowerLegLengthIn toeSuffix toe flipped">
+		<link name="lower_leg_${location}_link">
+			<contact>
+				<friction_anchor/>
+				<stiffness value="3000.0"/>
+				<damping value="100.0"/>
+				<spinning_friction value=".05"/>
+				<lateral_friction value="1"/>
+			</contact>
+			<visual>
+				<origin rpy="0 0 0" xyz="0 0 ${0.5*lowerLegLengthIn}"/>
+				<geometry>
+					<box size="${lowerLegWidth} ${lowerLegHeight} ${lowerLegLengthIn}"/>
+				</geometry>
+				<material name="legGrey"/>
+			</visual>
+			<collision>
+				<origin rpy="0 0 0" xyz="0 0 ${0.5*lowerLegLengthIn}"/>
+				<geometry>
+					<box size="${lowerLegWidth} ${lowerLegHeight} ${lowerLegLengthIn}"/>
+				</geometry>
+			</collision>
+			<inertial>
+				<origin rpy="0 0 0" xyz="0 0 ${0.5*lowerLegLengthIn}"/>
+				<mass value="${lowerLegMass}"/>
+				<inertia ixx=".00032459" ixy=".0" ixz=".0" iyy=".00032637" iyz=".0" izz=".000002178"/>
+			</inertial>
+		</link>	
+		<joint name="${jointNumber}" type="continuous">
+			<axis xyz="0 ${flipped} 0"/>
+			<parent link="upper_leg_${location}_link"/>
+			<child link="lower_leg_${location}_link"/>
+			<origin rpy="0 0 0" xyz="0 ${0.0085 * flipped} ${0.5*upperLegLength}"/>
+			<limit effort="100" velocity="100"/>
+			<joint_properties damping="0.0" friction="0.0"/>
+		</joint>
+
+		<xacro:if value="${toe}">
+			<!-- Toe -->
+			<link name="toe${toeSuffix}">
+				<contact>
+					<friction_anchor/>
+					<stiffness value="${toeStiffness}"/>
+					<damping value="${toeDamping}"/>
+					<spinning_friction value="${toeSpinningFriction}"/>
+					<lateral_friction value="${toeLateralFriction}"/>
+				</contact>
+				<visual>
+					<origin rpy="0 0 0" xyz="0 0 0"/>
+					<geometry>
+						<sphere radius="${toeRadius}"/>
+					</geometry>
+					<material name="black"/>
+				</visual>
+				<collision>
+					<origin rpy="0 0 0" xyz="0 0 0"/>
+					<geometry>
+						<sphere radius="${toeRadius}"/>
+					</geometry>
+				</collision>
+				<inertial>
+					<mass value="${toeMass}"/>
+					<inertia ixx="0.000025"  ixy="0"  ixz="0" iyy="0.000025" iyz="0" izz="0.000025" />
+				</inertial>
+			</link>
+			<joint name="toe${toeSuffix}" type="fixed">
+				<parent link="lower_leg_${location}_link"/>
+				<child link="toe${toeSuffix}"/>
+				<origin xyz="0 0 ${lowerLegLengthIn}"/>
+				<dynamics damping="0.0" friction="0.0"/>
+			</joint>
+		</xacro:if>
+
+	</xacro:macro>
+
+	<!-- Legs -->
+	<xacro:upperLeg location="front_rightR" hip="hip" xyz="0 .045 -.0145"/>
+	<xacro:upperLeg location="front_rightL" hip="motor" xyz="0 .045 .0145"/>
+	<xacro:upperLeg location="front_leftR" hip="hip" xyz="0 .045 -.0145"/>
+	<xacro:upperLeg location="front_leftL" hip="motor" xyz="0 .045 .0145"/>
+	<xacro:upperLeg location="back_rightR" hip="hip" xyz="0 .045 -.0145"/>
+	<xacro:upperLeg location="back_rightL" hip="motor" xyz="0 .045 .0145"/>
+	<xacro:upperLeg location="back_leftR" hip="hip" xyz="0 .045 -.0145"/>
+	<xacro:upperLeg location="back_leftL" hip="motor" xyz="0 .045 .0145"/>
+
+	<!-- Lower legs and flexy knee joints -->
+	<xacro:lowerLeg jointNumber="8" toeSuffix="0" toe="true" lowerLegLengthIn="${lowerLegLengthToe}" location="front_leftL" flipped="-1"/>
+	<xacro:lowerLeg jointNumber="9" toeSuffix="1" toe="false" lowerLegLengthIn="${lowerLegLength}" location="front_leftR" flipped="1"/>
+	<xacro:lowerLeg jointNumber="10" toeSuffix="2" toe="true" lowerLegLengthIn="${lowerLegLengthToe}" location="back_leftL" flipped="-1"/>
+	<xacro:lowerLeg jointNumber="11" toeSuffix="3" toe="false" lowerLegLengthIn="${lowerLegLength}" location="back_leftR" flipped="1"/>
+	<xacro:lowerLeg jointNumber="12" toeSuffix="4" toe="false" lowerLegLengthIn="${lowerLegLength}" location="front_rightL" flipped="-1"/>
+	<xacro:lowerLeg jointNumber="13" toeSuffix="5" toe="true" lowerLegLengthIn="${lowerLegLengthToe}" location="front_rightR" flipped="1"/>
+	<xacro:lowerLeg jointNumber="14" toeSuffix="6" toe="false" lowerLegLengthIn="${lowerLegLength}" location="back_rightL" flipped="-1"/>
+	<xacro:lowerLeg jointNumber="15" toeSuffix="7" toe="true" lowerLegLengthIn="${lowerLegLengthToe}" location="back_rightR" flipped="1"/>
+
+</robot>
