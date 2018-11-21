@@ -613,7 +613,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -778,7 +778,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -943,7 +943,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1108,7 +1108,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1273,7 +1273,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1497,7 +1497,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1721,7 +1721,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1945,7 +1945,7 @@
         <geometry>
           <mesh>
             <scale>100 100 100</scale>
-            <uri>/home/vasilisvasilop/catkin_ws/src/ghost_gazebo/minitaur_description/urdf/tmotor3.dae</uri>
+            <uri>model://minitaur_constrained/../../urdf/tmotor3.dae</uri>
           </mesh>
         </geometry>
       </visual>
