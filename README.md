@@ -7,16 +7,20 @@ ROS package for the simulation of Ghost Robotics platforms using Gazebo
 3. The simulation depends a lot on friction parameters. These parameters can be configured in the URDF xacro files ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro) and [vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro)).
 
 ## Running the simulation
-1. Copy the package to your ROS workspace folder
+1. For the package to work properly, make sure you have installed the following packages:
+```
+$ sudo apt-get install ros-kinetic-controller-manager ros-kinetic-joint-state-controller ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control ros-kinetic-effort-controllers
+``` 
+2. Copy the package to your ROS workspace folder
 ```
 $ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
 ```
-2. The following line needs to be added in ~/.bashrc to allow for proper Gazebo model detection
+3. The following line needs to be added in ~/.bashrc to allow for proper Gazebo model detection
 ```
 export GAZEBO_MODEL_PATH=<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
 ```
-3. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0003 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
-4. To launch the simulation, build the package and, depending on the robot, run:
+4. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0003 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
+5. To launch the simulation, build the package and, depending on the robot, run:
 ```
 $ roslaunch gazebo_scripts minitaur_gazebo.launch
 ```
@@ -24,7 +28,7 @@ or
 ```
 $ roslaunch gazebo_scripts vision60_gazebo.launch
 ```
-5. Compile and run the corresponding Ghost Robotics SDK script to control the robot. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
+6. Compile and run the corresponding Ghost Robotics SDK script to control the robot. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
 ```
 $ mv <artifacts_location>/examples/FirstHop/Makefile <artifacts_location>/examples/FirstHop/Makefile.bk
 $ cp <artifacts_location>/thirdparty/ghost_gazebo/extras/Makefile <artifacts_location>/examples/FirstHop/Makefile
