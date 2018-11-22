@@ -19,7 +19,7 @@ $ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
 ```
 export GAZEBO_MODEL_PATH=<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
 ```
-4. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0003 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
+4. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0005 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
 5. To launch the simulation, build the package and, depending on the robot, run:
 ```
 $ roslaunch gazebo_scripts minitaur_gazebo.launch

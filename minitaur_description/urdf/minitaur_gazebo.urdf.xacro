@@ -720,6 +720,7 @@
 								<coefficient>${toeSpinningFriction}</coefficient>
 							</torsional>
 							<ode>
+								<mu>${toeLateralFriction}</mu>
 								<mu2>${toeLateralFriction}</mu2>
 							</ode>
 							<bullet>
