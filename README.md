@@ -188,7 +188,7 @@ However, you also need to do the following after the conversion:
     </contact>
 </sensor>
 ```
-3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format:
+3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format. Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '13' and '15' and negative for '8', '10', '12' and '14'.
 ```
     <joint name='9' type='universal'>
       <child>lower_leg_front_leftR_link</child>
@@ -219,7 +219,6 @@ However, you also need to do the following after the conversion:
       </axis2>
     </joint>
 ```
-Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '15' and '13' and negative for '12', '14', '10' and '8'.
 4. Make sure to move the SDF file to the [minitaur_constrained folder](minitaur_description/sdf/minitaur_constrained) and rename it from minitaur_gazebo.sdf to minitaur_constrained.sdf.
 5. Rename the model name in [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf) to `minitaur_constrained`. Do the same thing for the namespace in `libgazebo_ros_control.so`.
 
