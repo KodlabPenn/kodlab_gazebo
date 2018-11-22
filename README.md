@@ -188,8 +188,40 @@ However, you also need to do the following after the conversion:
     </contact>
 </sensor>
 ```
-3. Make sure to move the SDF file to the [minitaur_constrained folder](minitaur_description/sdf/minitaur_constrained) and rename it from minitaur_gazebo.sdf to minitaur_constrained.sdf.
-4. Rename the model name in [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf) to `minitaur_constrained`. Do the same thing for the namespace in `libgazebo_ros_control.so`.
+3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format:
+```
+    <joint name='9' type='universal'>
+      <child>lower_leg_front_leftR_link</child>
+      <parent>motor_front_leftR_link</parent>
+      <axis>
+        <xyz>-0 1 -0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
+    </joint>
+```
+Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '15' and '13' and negative for '12', '14', '10' and '8'.
+4. Make sure to move the SDF file to the [minitaur_constrained folder](minitaur_description/sdf/minitaur_constrained) and rename it from minitaur_gazebo.sdf to minitaur_constrained.sdf.
+5. Rename the model name in [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf) to `minitaur_constrained`. Do the same thing for the namespace in `libgazebo_ros_control.so`.
 
 ## Converting Vision60's URDF to SDF
 This process is more straightforward and we have already included properly converted URDF and SDF files. We have a URDF xacro file ([vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro)) in the urdf folder that can be converted to URDF with

@@ -718,7 +718,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='9' type='revolute'>
+    <joint name='9' type='universal'>
       <child>lower_leg_front_leftR_link</child>
       <parent>motor_front_leftR_link</parent>
       <axis>
@@ -733,6 +733,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_leftR_link'>
       <pose frame=''>-0.2375 0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -883,7 +895,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='11' type='revolute'>
+    <joint name='11' type='universal'>
       <child>lower_leg_back_leftR_link</child>
       <parent>motor_back_leftR_link</parent>
       <axis>
@@ -898,6 +910,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_rightL_link'>
       <pose frame=''>0.2375 -0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -1048,7 +1072,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='12' type='revolute'>
+    <joint name='12' type='universal'>
       <child>lower_leg_front_rightL_link</child>
       <parent>motor_front_rightL_link</parent>
       <axis>
@@ -1063,6 +1087,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_rightL_link'>
       <pose frame=''>-0.2375 -0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -1213,7 +1249,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='14' type='revolute'>
+    <joint name='14' type='universal'>
       <child>lower_leg_back_rightL_link</child>
       <parent>motor_back_rightL_link</parent>
       <axis>
@@ -1228,6 +1264,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_leftL_link'>
       <pose frame=''>-0.2375 0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1437,7 +1485,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='10' type='revolute'>
+    <joint name='10' type='universal'>
       <child>lower_leg_back_leftL_link</child>
       <parent>motor_back_leftL_link</parent>
       <axis>
@@ -1452,6 +1500,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_rightR_link'>
       <pose frame=''>-0.2375 -0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1661,7 +1721,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='15' type='revolute'>
+    <joint name='15' type='universal'>
       <child>lower_leg_back_rightR_link</child>
       <parent>motor_back_rightR_link</parent>
       <axis>
@@ -1676,6 +1736,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_leftL_link'>
       <pose frame=''>0.2375 0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1885,7 +1957,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='8' type='revolute'>
+    <joint name='8' type='universal'>
       <child>lower_leg_front_leftL_link</child>
       <parent>motor_front_leftL_link</parent>
       <axis>
@@ -1900,6 +1972,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_rightR_link'>
       <pose frame=''>0.2375 -0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -2109,7 +2193,7 @@
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='13' type='revolute'>
+    <joint name='13' type='universal'>
       <child>lower_leg_front_rightR_link</child>
       <parent>motor_front_rightR_link</parent>
       <axis>
@@ -2124,6 +2208,18 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <joint name='constraint_back_left' type='revolute'>
       <parent>lower_leg_back_leftL_link</parent>
