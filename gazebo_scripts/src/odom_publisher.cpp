@@ -148,7 +148,7 @@ int main(int argc, char **argv) {
 
 	while (ros::ok()) {
 		// Set ROS rate
-		ros::Rate r(2000);
+		ros::Rate r(60);
 
 		// Spin once
 		ros::spinOnce();
