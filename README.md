@@ -20,14 +20,19 @@ $ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
 export GAZEBO_MODEL_PATH=<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
 ```
 4. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0005 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
-5. To launch the simulation, build the package and, depending on the robot, run:
+5. To launch the simulation, build the package and run:
 ```
 $ roslaunch gazebo_scripts minitaur_gazebo.launch
 ```
-or 
+for standalone Minitaur, or
+```
+$ roslaunch gazebo_scripts minitaur_sensor_gazebo.launch
+```
+for Minitaur equipped with a sensor head, or 
 ```
 $ roslaunch gazebo_scripts vision60_gazebo.launch
 ```
+for Vision60.
 6. Compile and run the corresponding Ghost Robotics SDK script to control the robot. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
 ```
 $ mv <artifacts_location>/examples/FirstHop/Makefile <artifacts_location>/examples/FirstHop/Makefile.bk
@@ -38,7 +43,7 @@ $ ./FirstHop_MINITAUR_E
 ```
 
 ## Converting Minitaur's URDF to SDF
-The most important requirement to setup the simulation is to properly convert the Minitaur's URDF file to an SDF file. We have a URDF xacro file ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro)) in the [urdf folder](minitaur_description/urdf) and properly converted URDF and SDF files. If you need to modify the xacro file, please run the following commands to convert the xacro file to URDF
+The most important requirement to setup the simulation is to properly convert the Minitaur's URDF file to an SDF file. We have a URDF xacro file ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro)) in the [urdf folder](minitaur_description/urdf) and properly converted URDF and SDF files (see [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf)). If you need to modify any of the above, please run the following commands to convert the xacro file to URDF
 ```bash
 $ python xacro.py minitaur_gazebo.urdf.xacro > minitaur_gazebo.urdf
 ```
@@ -48,7 +53,7 @@ $ gz sdf -p minitaur_gazebo.urdf > minitaur_gazebo.sdf
 ```
 
 However, you also need to do the following after the conversion:
-1. Make sure to add the lines below to the end of the SDF file (before the model termination). These lines realize the 5-bar mechanism constraint for each leg.
+1. Make sure to add the lines below to the end of the SDF file (before the model termination). These lines realize the 5-bar mechanism constraint for each leg (hence the name `constrained`).
 ```
     <joint name='constraint_back_left' type='revolute'>
       <parent>lower_leg_back_leftL_link</parent>
@@ -188,7 +193,7 @@ However, you also need to do the following after the conversion:
     </contact>
 </sensor>
 ```
-3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format. Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '13' and '15' and negative for '8', '10', '12' and '14'.
+3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format example. Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '13' and '15' and negative for '8', '10', '12' and '14'.
 ```
     <joint name='9' type='universal'>
       <child>lower_leg_front_leftR_link</child>
@@ -219,8 +224,24 @@ However, you also need to do the following after the conversion:
       </axis2>
     </joint>
 ```
-4. Make sure to move the SDF file to the [minitaur_constrained folder](minitaur_description/sdf/minitaur_constrained) and rename it from minitaur_gazebo.sdf to minitaur_constrained.sdf.
+4. Make sure to move the SDF file to the [minitaur_constrained folder](minitaur_description/sdf/minitaur_constrained) and rename it from `minitaur_gazebo.sdf` to `minitaur_constrained.sdf`.
 5. Rename the model name in [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf) to `minitaur_constrained`. Do the same thing for the namespace in `libgazebo_ros_control.so`.
+
+## Minitaur with sensor head
+We have included an SDF file describing Minitaur equipped with a sensor head on top (see [minitaur_sensor.sdf](minitaur_description/sdf/minitaur_sensor/minitaur_sensor.sdf)). If you modify any of the xacro files describing Minitaur or want to generate this SDF file on your own, follow the steps above to generate [minitaur_constrained.sdf](minitaur_description/sdf/minitaur_constrained/minitaur_constrained.sdf) first. Then:
+1. Copy the SDF file to the [minitaur_sensor folder](minitaur_description/sdf/minitaur_sensor) and rename it from `minitaur_constrained.sdf` to `minitaur_sensor.sdf`.
+2. To add the sensor head, include the following lines at the end of the SDF file (before the model termination):
+```
+    <include>
+      <uri>model://sensor_head</uri>
+      <pose>0 0 0.04 0 0 0</pose>
+    </include>
+    <joint name="sensor_head_joint" type="fixed">
+      <child>sensor_head::base</child>
+      <parent>base_chassis_link_dummy</parent>
+    </joint>
+```
+The sensor head description is included in [sensor_head.sdf](minitaur_description/sdf/sensor_head/sensor_head.sdf) and you are free to modify it as needed.
 
 ## Converting Vision60's URDF to SDF
 This process is more straightforward and we have already included properly converted URDF and SDF files. We have a URDF xacro file ([vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro)) in the urdf folder that can be converted to URDF with

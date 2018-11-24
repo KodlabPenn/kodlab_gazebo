@@ -414,7 +414,7 @@
   <link name="motor_front_rightR_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -439,7 +439,7 @@
   <link name="motor_front_rightL_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -464,7 +464,7 @@
   <link name="motor_front_leftL_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -489,7 +489,7 @@
   <link name="motor_front_leftR_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -514,7 +514,7 @@
   <link name="motor_back_rightR_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -539,7 +539,7 @@
   <link name="motor_back_rightL_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -564,7 +564,7 @@
   <link name="motor_back_leftL_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>
@@ -589,7 +589,7 @@
   <link name="motor_back_leftR_link">
     <visual>
       <geometry>
-        <mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="motor"/>
     </visual>

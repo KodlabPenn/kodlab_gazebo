@@ -487,7 +487,7 @@
   <link name="motor_front_rightR_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -524,7 +524,7 @@
   <link name="motor_front_rightL_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -561,7 +561,7 @@
   <link name="motor_front_leftL_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -598,7 +598,7 @@
   <link name="motor_front_leftR_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -635,7 +635,7 @@
   <link name="motor_back_rightR_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -672,7 +672,7 @@
   <link name="motor_back_rightL_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -709,7 +709,7 @@
   <link name="motor_back_leftL_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>
@@ -746,7 +746,7 @@
   <link name="motor_back_leftR_link">
     <visual>
       <geometry>
-        <mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+        <mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
       </geometry>
     </visual>
     <collision>

@@ -27,7 +27,7 @@ SOFTWARE.
 -->
 
 <sdf version='1.6'>
-  <model name='minitaur_original'>
+  <model name='minitaur_constrained'>
     <link name='base_chassis_link_dummy'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
@@ -746,7 +746,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='9' type='revolute'>
+    <joint name='9' type='universal'>
       <child>lower_leg_front_leftR_link</child>
       <parent>motor_front_leftR_link</parent>
       <axis>
@@ -761,6 +761,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_leftR_link'>
       <pose frame=''>-0.2375 0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -911,7 +923,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='11' type='revolute'>
+    <joint name='11' type='universal'>
       <child>lower_leg_back_leftR_link</child>
       <parent>motor_back_leftR_link</parent>
       <axis>
@@ -926,6 +938,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_rightL_link'>
       <pose frame=''>0.2375 -0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -1076,7 +1100,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='12' type='revolute'>
+    <joint name='12' type='universal'>
       <child>lower_leg_front_rightL_link</child>
       <parent>motor_front_rightL_link</parent>
       <axis>
@@ -1091,6 +1115,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_rightL_link'>
       <pose frame=''>-0.2375 -0.099 -0.0185 1.57075 1.57075 0</pose>
@@ -1241,7 +1277,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='14' type='revolute'>
+    <joint name='14' type='universal'>
       <child>lower_leg_back_rightL_link</child>
       <parent>motor_back_rightL_link</parent>
       <axis>
@@ -1256,6 +1292,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_leftL_link'>
       <pose frame=''>-0.2375 0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1388,7 +1436,7 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
-      <collision name='lower_leg_back_leftL_link_fixed_joint_lump__toe2_collision_1'>
+      <collision name='toe1_collision'>
         <pose frame=''>0 0 0.248 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -1405,6 +1453,7 @@ SOFTWARE.
               <coefficient>0.3</coefficient>
             </torsional>
             <ode>
+              <mu>0.7</mu>
               <mu2>0.7</mu2>
             </ode>
             <bullet>
@@ -1426,6 +1475,12 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <sensor name="toe1_contact" type="contact">
+        <plugin name="toe1_plugin" filename="libcontact.so"/>
+        <contact>
+          <collision>toe1_collision</collision>
+        </contact>
+      </sensor>
       <visual name='lower_leg_back_leftL_link_visual'>
         <pose frame=''>0 0 0.124 0 -0 0</pose>
         <geometry>
@@ -1459,7 +1514,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='10' type='revolute'>
+    <joint name='10' type='universal'>
       <child>lower_leg_back_leftL_link</child>
       <parent>motor_back_leftL_link</parent>
       <axis>
@@ -1474,6 +1529,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_back_rightR_link'>
       <pose frame=''>-0.2375 -0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1606,7 +1673,7 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
-      <collision name='lower_leg_back_rightR_link_fixed_joint_lump__toe7_collision_1'>
+      <collision name='toe3_collision'>
         <pose frame=''>0 0 0.248 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -1623,6 +1690,7 @@ SOFTWARE.
               <coefficient>0.3</coefficient>
             </torsional>
             <ode>
+              <mu>0.7</mu>
               <mu2>0.7</mu2>
             </ode>
             <bullet>
@@ -1644,6 +1712,12 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <sensor name="toe3_contact" type="contact">
+        <plugin name="toe3_plugin" filename="libcontact.so"/>
+        <contact>
+          <collision>toe3_collision</collision>
+        </contact>
+      </sensor>
       <visual name='lower_leg_back_rightR_link_visual'>
         <pose frame=''>0 0 0.124 0 -0 0</pose>
         <geometry>
@@ -1677,7 +1751,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='15' type='revolute'>
+    <joint name='15' type='universal'>
       <child>lower_leg_back_rightR_link</child>
       <parent>motor_back_rightR_link</parent>
       <axis>
@@ -1692,6 +1766,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_leftL_link'>
       <pose frame=''>0.2375 0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -1824,7 +1910,7 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
-      <collision name='lower_leg_front_leftL_link_fixed_joint_lump__toe0_collision_1'>
+      <collision name='toe0_collision'>
         <pose frame=''>0 0 0.248 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -1841,6 +1927,7 @@ SOFTWARE.
               <coefficient>0.3</coefficient>
             </torsional>
             <ode>
+              <mu>0.7</mu>
               <mu2>0.7</mu2>
             </ode>
             <bullet>
@@ -1862,6 +1949,12 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <sensor name="toe0_contact" type="contact">
+        <plugin name="toe0_plugin" filename="libcontact.so"/>
+        <contact>
+          <collision>toe0_collision</collision>
+        </contact>
+      </sensor>
       <visual name='lower_leg_front_leftL_link_visual'>
         <pose frame=''>0 0 0.124 0 -0 0</pose>
         <geometry>
@@ -1895,7 +1988,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='8' type='revolute'>
+    <joint name='8' type='universal'>
       <child>lower_leg_front_leftL_link</child>
       <parent>motor_front_leftL_link</parent>
       <axis>
@@ -1910,6 +2003,18 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
     </joint>
     <link name='motor_front_rightR_link'>
       <pose frame=''>0.2375 -0.154 -0.0185 1.57075 -1.57075 0</pose>
@@ -2042,7 +2147,7 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
-      <collision name='lower_leg_front_rightR_link_fixed_joint_lump__toe5_collision_1'>
+      <collision name='toe2_collision'>
         <pose frame=''>0 0 0.248 0 -0 0</pose>
         <geometry>
           <sphere>
@@ -2059,6 +2164,7 @@ SOFTWARE.
               <coefficient>0.3</coefficient>
             </torsional>
             <ode>
+              <mu>0.7</mu>
               <mu2>0.7</mu2>
             </ode>
             <bullet>
@@ -2080,6 +2186,12 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <sensor name="toe2_contact" type="contact">
+        <plugin name="toe2_plugin" filename="libcontact.so"/>
+        <contact>
+          <collision>toe2_collision</collision>
+        </contact>
+      </sensor>
       <visual name='lower_leg_front_rightR_link_visual'>
         <pose frame=''>0 0 0.124 0 -0 0</pose>
         <geometry>
@@ -2113,7 +2225,7 @@ SOFTWARE.
       <velocity_decay/>
       <self_collide>0</self_collide>
     </link>
-    <joint name='13' type='revolute'>
+    <joint name='13' type='universal'>
       <child>lower_leg_front_rightR_link</child>
       <parent>motor_front_rightR_link</parent>
       <axis>
@@ -2128,10 +2240,158 @@ SOFTWARE.
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <axis2>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.02</lower>
+          <upper>0.02</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis2>
+    </joint>
+    <joint name='constraint_back_left' type='revolute'>
+      <parent>lower_leg_back_leftL_link</parent>
+      <child>lower_leg_back_leftR_link</child>
+      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='constraint_back_right' type='revolute'>
+      <parent>lower_leg_back_rightR_link</parent>
+      <child>lower_leg_back_rightL_link</child>
+      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <axis>
+        <xyz>-0 -1 -0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='constraint_front_left' type='revolute'>
+      <parent>lower_leg_front_leftL_link</parent>
+      <child>lower_leg_front_leftR_link</child>
+      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='constraint_front_right' type='revolute'>
+      <parent>lower_leg_front_rightR_link</parent>
+      <child>lower_leg_front_rightL_link</child>
+      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <axis>
+        <xyz>-0 -1 -0</xyz>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <limit>
+          <lower>-1.79769e+308</lower>
+          <upper>1.79769e+308</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
     </joint>
     <static>0</static>
     <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-      <robotNamespace>/minitaur_original</robotNamespace>
+      <robotNamespace>/minitaur_constrained</robotNamespace>
     </plugin>
+    <include>
+      <uri>model://sensor_head</uri>
+      <pose>0 0 0.04 0 0 0</pose>
+    </include>
+    <joint name="sensor_head_joint" type="fixed">
+      <child>sensor_head::base</child>
+      <parent>base_chassis_link_dummy</parent>
+    </joint>
   </model>
 </sdf>

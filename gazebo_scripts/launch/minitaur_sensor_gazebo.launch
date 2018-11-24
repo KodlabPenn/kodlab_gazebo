@@ -1,0 +1,77 @@
+<!-- 
+MIT License (modified)
+
+Copyright (c) 2018 The Trustees of the University of Pennsylvania
+Authors:
+Vasileios Vasilopoulos <vvasilo@seas.upenn.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this **file** (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. 
+-->
+
+<launch>
+  <!-- Arguments -->
+  <arg name="robot_name"                  default="minitaur"/>                  <!-- Robot name - minitaur or vision60 -->
+	<arg name="stereo_camera_frame"	        default="/zed_camera_center"/>				<!-- Check your stereo camera - assumed to be facing backwards, not implemented here -->
+	<arg name="robot_frame"						      default="/base_chassis_link_dummy"/>  <!-- Check your robot - base_chassis_link_dummy for Minitaur, body for Vision60 -->
+  <arg name="stereo_camera_frame_x"       default="-0.115"/>                    <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="stereo_camera_frame_y"       default="0.03"/>                      <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="stereo_camera_frame_z"       default="0.0"/>                       <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="stereo_camera_frame_roll"    default="0.0"/>                       <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="stereo_camera_frame_pitch"   default="0.0"/>                       <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="stereo_camera_frame_yaw"     default="3.14"/>                      <!-- Check your actual robot setup - This is the relation that gives stereo_camera_frame from robot_frame -->
+  <arg name="odom_frame"                  default="/odom"/>
+
+  <!-- Launch the minitaur world with specific physics parameters -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="world_name" value="$(find gazebo_scripts)/worlds/ghost.world"/>
+    <arg name="gui" value="true"/>
+    <arg name="physics" value="ode"/>
+  </include>
+
+  <!-- Distinguish between URDF description for control and SDF description for simulation -->
+  <param name="robot_description" textfile="$(find minitaur_description)/urdf/minitaur_gazebo.urdf" />
+  <param name="robot_description_sdf" textfile="$(find minitaur_description)/sdf/minitaur_sensor/minitaur_sensor.sdf" />
+
+  <!-- Spawn SDF model -->
+  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model minitaur_sensor -x 0 -y 0.0 -z 0.4" output="screen"/>
+
+  <!-- Spawn TF tree -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+  <!-- Define the transform between the base_chassis link frame and the (simulated) ZED frame -->
+	<node pkg="tf" type="static_transform_publisher" name="base_to_zed" args="$(arg stereo_camera_frame_x) $(arg stereo_camera_frame_y) $(arg stereo_camera_frame_z) $(arg stereo_camera_frame_yaw) $(arg stereo_camera_frame_pitch) $(arg stereo_camera_frame_roll) $(arg stereo_camera_frame) $(arg robot_frame) 5" />
+
+  <!-- Launch odometry tracking emulator -->
+  <node pkg="gazebo_scripts" type="odom_publisher" name="odom_publisher">
+    <param name="robot_name" value="$(arg robot_name)"/>
+    <param name="child_frame" value="$(arg stereo_camera_frame)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <param name="child_frame_x" value="$(arg stereo_camera_frame_x)"/>
+    <param name="child_frame_y" value="$(arg stereo_camera_frame_y)"/>
+    <param name="child_frame_z" value="$(arg stereo_camera_frame_z)"/>
+    <param name="child_frame_roll" value="$(arg stereo_camera_frame_roll)"/>
+    <param name="child_frame_pitch" value="$(arg stereo_camera_frame_pitch)"/>
+    <param name="child_frame_yaw" value="$(arg stereo_camera_frame_yaw)"/>
+  </node>
+
+  <!-- Launch ros_controllers -->
+  <rosparam file="$(find gazebo_scripts)/config/minitaur_control.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/minitaur_constrained" args="joint_state_controller joint0_effort_controller joint1_effort_controller joint2_effort_controller joint3_effort_controller joint4_effort_controller joint5_effort_controller joint6_effort_controller joint7_effort_controller"/>
+</launch>

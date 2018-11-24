@@ -45,6 +45,7 @@ find_package(catkin REQUIRED COMPONENTS
     controller_manager
     joint_state_controller
     robot_state_publisher
+    tf
 )
 find_package(gazebo REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
@@ -167,7 +168,7 @@ add_library(contact SHARED src/ContactPlugin.cc)
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/minitaur_gazebo_node.cpp)
+add_executable(odom_publisher src/odom_publisher.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -181,6 +182,7 @@ add_library(contact SHARED src/ContactPlugin.cc)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(contact ${GAZEBO_LIBRARIES})
+target_link_libraries(odom_publisher ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 #############
 ## Install ##

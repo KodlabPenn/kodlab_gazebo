@@ -444,7 +444,7 @@
 		<link name="motor_${location}_${side}${LR}_link">
 			<visual>
 				<geometry>
-					<mesh filename="package://minitaur_description/urdf/tmotor3.obj" scale="1.0 1.0 1.0"/>
+					<mesh filename="package://minitaur_description/meshes/tmotor3.obj" scale="1.0 1.0 1.0"/>
 				</geometry>
 				<material name="motor"/>
 			</visual>

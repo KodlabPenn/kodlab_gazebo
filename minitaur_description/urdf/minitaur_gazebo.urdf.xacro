@@ -535,7 +535,7 @@
 		<link name="motor_${location}_${side}${LR}_link">
 			<visual>
 				<geometry>
-					<mesh filename="model://minitaur_constrained/../../urdf/tmotor3.dae" scale="100 100 100"/>
+					<mesh filename="model://minitaur_constrained/../../meshes/tmotor3.dae" scale="100 100 100"/>
 				</geometry>
 			</visual>
 			<collision>
