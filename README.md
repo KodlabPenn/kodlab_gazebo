@@ -243,7 +243,7 @@ We have included an SDF file describing Minitaur equipped with a sensor head on 
 ```
 The sensor head description is included in [sensor_head.sdf](minitaur_description/sdf/sensor_head/sensor_head.sdf) and you are free to modify it as needed. 
 
-*NOTE*: For the LIDAR you can set the sensor type to either `gpu_ray` or `ray` depending on whether GPU acceleration is available or not. The corresponding plugin filenames to use are `libgazebo_ros_gpu_laser.so` and `libgazebo_ros_laser.so`. 
+**NOTE**: For the LIDAR you can set the sensor type to either `gpu_ray` or `ray` depending on whether GPU acceleration is available or not. The corresponding plugin filenames to use are `libgazebo_ros_gpu_laser.so` and `libgazebo_ros_laser.so`. 
 
 ## Converting Vision60's URDF to SDF
 This process is more straightforward and we have already included properly converted URDF and SDF files. We have a URDF xacro file ([vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro)) in the urdf folder that can be converted to URDF with
