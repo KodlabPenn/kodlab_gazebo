@@ -15,7 +15,7 @@ $ sudo apt-get install ros-kinetic-controller-manager ros-kinetic-joint-state-co
 ```
 $ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
 ```
-3. The following line needs to be added in ~/.bashrc to allow for proper Gazebo model detection
+3. The following line needs to be added in `~/.bashrc` to allow for proper Gazebo model detection
 ```
 export GAZEBO_MODEL_PATH=<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
 ```
@@ -266,3 +266,16 @@ After the conversion:
 </sensor>
 ```
 2. Make sure to move the SDF file to the [vision60 SDF folder](vision60_description/sdf) and rename it to vision60.sdf.
+
+## Other
+
+Except for the robots, we also include other useful descriptions of objects for autonomous tasks.
+
+### AprilTags
+
+We have included the Gazebo model descriptions of some members of the 36h11 [AprilTag](https://april.eecs.umich.edu/software/apriltag) family. Make sure to add the descriptions to your `GAZEBO_MODEL_PATH` by adding the following line to your `~/.bashrc` file:
+```
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:<catkin_ws_location>/src/ghost_gazebo/other/apriltags_description
+```
+
+If you want to generate your own descriptions, you can download pre-generated tags [here](https://april.eecs.umich.edu/software/apriltag). Those tags (`.png` images) are quite small, so you might need to enlarge them (we suggest [gimp](https://www.gimp.org/) - make sure to scale the images with `None` as the interpolation method). The package we used for the automated SDF model generation can be found [here](https://github.com/mikaelarguedas/gazebo_models).
