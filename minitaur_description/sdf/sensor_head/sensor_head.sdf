@@ -221,10 +221,9 @@ SOFTWARE.
         <pose>0.135 0 0.03 0 0 0</pose>
         <update_rate>30.0</update_rate>
         <camera name="head">
-          <horizontal_fov>2.0943951024</horizontal_fov>
           <image>
-            <width>800</width>
-            <height>600</height>
+            <width>640</width>
+            <height>480</height>
             <format>R8G8B8</format>
           </image>
           <clip>
@@ -240,6 +239,8 @@ SOFTWARE.
             <stddev>0.007</stddev>
           </noise>
         </camera>
+        <!-- Input camera parameters - the camera calibration yaml file gives width, height etc. -->
+        <!-- For distortion model plumb_bob, the 5 parameters are (k1, k2, t1, t2, k3) -->
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
@@ -254,6 +255,7 @@ SOFTWARE.
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
         </plugin>
+        <visualize>true</visualize>
       </sensor>
     </link>
     <joint name="camera_joint" type="fixed">
