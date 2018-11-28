@@ -255,7 +255,6 @@ SOFTWARE.
           <distortionT1>0.0</distortionT1>
           <distortionT2>0.0</distortionT2>
         </plugin>
-        <visualize>true</visualize>
       </sensor>
     </link>
     <joint name="camera_joint" type="fixed">

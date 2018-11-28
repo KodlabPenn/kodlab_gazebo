@@ -1,6 +1,6 @@
 <?xml version="1.0" ?><sdf version="1.6">
   <model name="tag36_11_00004">
-    <static>true</static>
+    <static>false</static>
     <link name="link">
       <visual name="visual">
         <geometry>
@@ -9,6 +9,18 @@
           <scale>0.17 0.17 0.17</scale></mesh>
         </geometry>
       </visual>
+      <inertial>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-6</iyy>
+          <iyz>0</iyz>
+          <izz>1e-6</izz>
+        </inertia>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </inertial>
     </link>
   </model>
 </sdf>
