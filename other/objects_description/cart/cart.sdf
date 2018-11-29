@@ -31,16 +31,16 @@ SOFTWARE.
     <link name='cart_main'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <mass>0.18</mass>
+        <mass>6</mass>
         <inertia>
-          <ixx>2.94e-4</ixx>
+          <ixx>1.2</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1.23e-3</iyy>
+          <iyy>1</iyy>
           <iyz>0</iyz>
-          <izz>1.47e-3</izz>
+          <izz>0.8748</izz>
         </inertia>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0.3 0 -0 0</pose>
       </inertial>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -1080,7 +1080,8 @@ SOFTWARE.
     <include>
       <name>tag_length_front</name>
       <uri>model://tag36_11_00003</uri>
-      <pose>0 0.227 0.12 0 0 1.57</pose>
+      <pose>0 0.232 0.12 0 0 1.57</pose>
+      <static>false</static>
     </include>
     <joint name="tag_length_front_joint" type="fixed">
       <child>tag_length_front::link</child>
@@ -1090,7 +1091,8 @@ SOFTWARE.
     <include>
       <name>tag_length_back</name>
       <uri>model://tag36_11_00003</uri>
-      <pose>0 -0.227 0.12 0 0 -1.57</pose>
+      <pose>0 -0.232 0.12 0 0 -1.57</pose>
+      <static>false</static>
     </include>
     <joint name="tag_length_back_joint" type="fixed">
       <child>tag_length_back::link</child>
@@ -1101,6 +1103,7 @@ SOFTWARE.
       <name>tag_width_right</name>
       <uri>model://tag36_11_00001</uri>
       <pose>0.307 0 0.12 0 0 0</pose>
+      <static>false</static>
     </include>
     <joint name="tag_width_right_joint" type="fixed">
       <child>tag_width_right::link</child>
@@ -1111,10 +1114,75 @@ SOFTWARE.
       <name>tag_width_left</name>
       <uri>model://tag36_11_00001</uri>
       <pose>-0.307 0 0.12 0 0 3.14</pose>
+      <static>false</static>
     </include>
     <joint name="tag_width_left_joint" type="fixed">
       <child>tag_width_left::link</child>
       <parent>cart_main</parent>
+    </joint>
+
+    <include>
+      <name>caster_front_left</name>
+      <uri>model://caster_cart</uri>
+      <pose>-0.269 0.194 0.12 0 0 3.14</pose>
+    </include>
+    <joint name="caster_front_left_joint" type="revolute">
+      <child>caster_front_left::caster_top</child>
+      <parent>cart_main</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <include>
+      <name>caster_front_right</name>
+      <uri>model://caster_cart</uri>
+      <pose>0.269 0.194 0.12 0 0 3.14</pose>
+    </include>
+    <joint name="caster_front_right_joint" type="revolute">
+      <child>caster_front_right::caster_top</child>
+      <parent>cart_main</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <include>
+      <name>caster_back_right</name>
+      <uri>model://caster_cart</uri>
+      <pose>0.269 -0.194 0.12 0 0 3.14</pose>
+    </include>
+    <joint name="caster_back_right_joint" type="revolute">
+      <child>caster_back_right::caster_top</child>
+      <parent>cart_main</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <include>
+      <name>caster_back_left</name>
+      <uri>model://caster_cart</uri>
+      <pose>-0.269 -0.194 0.12 0 0 3.14</pose>
+    </include>
+    <joint name="caster_back_left_joint" type="revolute">
+      <child>caster_back_left::caster_top</child>
+      <parent>cart_main</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
     </joint>
 
     <static>0</static>

@@ -199,12 +199,20 @@ SOFTWARE.
         </geometry>
       </collision>
       <visual name="camera_visual">
-        <pose>0.125 0 0.015 0 0 0</pose>
+        <pose>0.125 0.039 0 0 0 -1.57</pose>
         <geometry>
-          <box>
-            <size>0.029 0.094 0.024</size>
-          </box>
+          <mesh>
+            <uri>model://minitaur_constrained/../../meshes/camera.stl</uri>
+            <scale>0.02 0.02 0.02</scale>
+          </mesh>
         </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
       </visual>
       <inertial>
         <mass>0.16</mass>
@@ -273,12 +281,19 @@ SOFTWARE.
         </geometry>
       </collision>
       <visual name="stereo_camera_visual">
-        <pose>-0.115 0 0.01625 0 0 0</pose>
+        <pose>-0.115 0 0.01625 0 0 3.14</pose>
         <geometry>
-          <box>
-            <size>0.0305 0.1245 0.0265</size>
-          </box>
+          <mesh>
+            <uri>model://minitaur_constrained/../../meshes/ZEDM.stl</uri>
+          </mesh>
         </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
       </visual>
       <inertial>
         <mass>0.0629</mass>
@@ -314,6 +329,13 @@ SOFTWARE.
             <size>0.090 0.057 0.04</size>
           </box>
         </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
       </visual>
       <inertial>
         <mass>0.2</mass>
