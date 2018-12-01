@@ -1,6 +1,8 @@
 # ghost_gazebo
 ROS package for the simulation of Ghost Robotics platforms using Gazebo
 
+Maintainer: Vasileios Vasilopoulos ([vvasilo@seas.upenn.edu](vvasilo@seas.upenn.edu))
+
 ## General notes
 1. This ROS package is used in conjunction with and included in the `thirdparty` folder of the Ghost Robotics SDK artifacts, which are independently distributed by Ghost Robotics.
 2. At this point, there is no open source Vision60 control example in the SDK, but once released the following procedure should be identical. For now, you can just launch the Vision60 simulation as explained below.
