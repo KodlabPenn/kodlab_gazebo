@@ -759,7 +759,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -771,7 +771,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_back_leftR_link'>
@@ -936,7 +936,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -948,7 +948,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_front_rightL_link'>
@@ -1113,7 +1113,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 0 0</xyz>
@@ -1125,7 +1125,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_back_rightL_link'>
@@ -1290,7 +1290,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 0 0</xyz>
@@ -1302,7 +1302,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_back_leftL_link'>
@@ -1527,7 +1527,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 0 0</xyz>
@@ -1539,7 +1539,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_back_rightR_link'>
@@ -1764,7 +1764,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -1776,7 +1776,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_front_leftL_link'>
@@ -2001,7 +2001,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>-1 0 0</xyz>
@@ -2013,7 +2013,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <link name='motor_front_rightR_link'>
@@ -2238,7 +2238,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -2250,7 +2250,7 @@ SOFTWARE.
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
     <joint name='constraint_back_left' type='revolute'>

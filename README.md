@@ -215,7 +215,7 @@ However, you also need to do the following after the conversion:
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -227,7 +227,7 @@ However, you also need to do the following after the conversion:
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
+        <use_parent_model_frame>0</use_parent_model_frame>
       </axis2>
     </joint>
 ```
