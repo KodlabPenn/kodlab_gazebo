@@ -50,7 +50,7 @@ SOFTWARE.
   <param name="robot_description_sdf" textfile="$(find minitaur_description)/sdf/minitaur_sensor/minitaur_sensor.sdf" />
 
   <!-- Spawn SDF model -->
-  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model minitaur_sensor -x 0 -y 0.0 -z 0.4" output="screen"/>
+  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model minitaur_constrained -x 0 -y 0.0 -z 0.4" output="screen"/>
 
   <!-- Spawn TF tree -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
