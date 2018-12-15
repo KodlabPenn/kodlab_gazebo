@@ -65,7 +65,7 @@ However, you also need to do the following after the conversion:
     <joint name='constraint_back_left' type='revolute'>
       <parent>lower_leg_back_leftL_link</parent>
       <child>lower_leg_back_leftR_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -97,7 +97,7 @@ However, you also need to do the following after the conversion:
     <joint name='constraint_back_right' type='revolute'>
       <parent>lower_leg_back_rightR_link</parent>
       <child>lower_leg_back_rightL_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>-0 -1 -0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -129,7 +129,7 @@ However, you also need to do the following after the conversion:
     <joint name='constraint_front_left' type='revolute'>
       <parent>lower_leg_front_leftL_link</parent>
       <child>lower_leg_front_leftR_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -161,7 +161,7 @@ However, you also need to do the following after the conversion:
     <joint name='constraint_front_right' type='revolute'>
       <parent>lower_leg_front_rightR_link</parent>
       <child>lower_leg_front_rightL_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>-0 -1 -0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -215,7 +215,7 @@ However, you also need to do the following after the conversion:
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
       <axis2>
         <xyz>1 0 0</xyz>
@@ -227,7 +227,7 @@ However, you also need to do the following after the conversion:
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
       </axis2>
     </joint>
 ```
