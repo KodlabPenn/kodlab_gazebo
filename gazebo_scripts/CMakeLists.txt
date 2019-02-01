@@ -25,6 +25,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(gazebo_scripts)
 
+cmake_policy(SET CMP0054 OLD)
+cmake_policy(SET CMP0045 OLD)
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 

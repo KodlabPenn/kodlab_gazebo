@@ -1402,10 +1402,10 @@ SOFTWARE.
         </inertia>
       </inertial>
       <collision name='lower_leg_back_leftL_link_collision'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <surface>
@@ -1437,7 +1437,7 @@ SOFTWARE.
         </surface>
       </collision>
       <collision name='toe1_collision'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -1482,10 +1482,10 @@ SOFTWARE.
         </contact>
       </sensor>
       <visual name='lower_leg_back_leftL_link_visual'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <material>
@@ -1496,7 +1496,7 @@ SOFTWARE.
         </material>
       </visual>
       <visual name='lower_leg_back_leftL_link_fixed_joint_lump__toe2_visual_1'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -1639,10 +1639,10 @@ SOFTWARE.
         </inertia>
       </inertial>
       <collision name='lower_leg_back_rightR_link_collision'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <surface>
@@ -1674,7 +1674,7 @@ SOFTWARE.
         </surface>
       </collision>
       <collision name='toe3_collision'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -1719,10 +1719,10 @@ SOFTWARE.
         </contact>
       </sensor>
       <visual name='lower_leg_back_rightR_link_visual'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <material>
@@ -1733,7 +1733,7 @@ SOFTWARE.
         </material>
       </visual>
       <visual name='lower_leg_back_rightR_link_fixed_joint_lump__toe7_visual_1'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -1876,10 +1876,10 @@ SOFTWARE.
         </inertia>
       </inertial>
       <collision name='lower_leg_front_leftL_link_collision'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <surface>
@@ -1911,7 +1911,7 @@ SOFTWARE.
         </surface>
       </collision>
       <collision name='toe0_collision'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -1956,10 +1956,10 @@ SOFTWARE.
         </contact>
       </sensor>
       <visual name='lower_leg_front_leftL_link_visual'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <material>
@@ -1970,7 +1970,7 @@ SOFTWARE.
         </material>
       </visual>
       <visual name='lower_leg_front_leftL_link_fixed_joint_lump__toe0_visual_1'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -2113,10 +2113,10 @@ SOFTWARE.
         </inertia>
       </inertial>
       <collision name='lower_leg_front_rightR_link_collision'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <surface>
@@ -2148,7 +2148,7 @@ SOFTWARE.
         </surface>
       </collision>
       <collision name='toe2_collision'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -2193,10 +2193,10 @@ SOFTWARE.
         </contact>
       </sensor>
       <visual name='lower_leg_front_rightR_link_visual'>
-        <pose frame=''>0 0 0.124 0 -0 0</pose>
+        <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
-            <size>0.017 0.009 0.248</size>
+            <size>0.017 0.009 0.22</size>
           </box>
         </geometry>
         <material>
@@ -2207,7 +2207,7 @@ SOFTWARE.
         </material>
       </visual>
       <visual name='lower_leg_front_rightR_link_fixed_joint_lump__toe5_visual_1'>
-        <pose frame=''>0 0 0.248 0 -0 0</pose>
+        <pose frame=''>0 0 0.22 0 -0 0</pose>
         <geometry>
           <sphere>
             <radius>0.015</radius>
@@ -2256,7 +2256,7 @@ SOFTWARE.
     <joint name='constraint_back_left' type='revolute'>
       <parent>lower_leg_back_leftL_link</parent>
       <child>lower_leg_back_leftR_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -2288,7 +2288,7 @@ SOFTWARE.
     <joint name='constraint_back_right' type='revolute'>
       <parent>lower_leg_back_rightR_link</parent>
       <child>lower_leg_back_rightL_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>-0 -1 -0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -2320,7 +2320,7 @@ SOFTWARE.
     <joint name='constraint_front_left' type='revolute'>
       <parent>lower_leg_front_leftL_link</parent>
       <child>lower_leg_front_leftR_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>
@@ -2352,7 +2352,7 @@ SOFTWARE.
     <joint name='constraint_front_right' type='revolute'>
       <parent>lower_leg_front_rightR_link</parent>
       <child>lower_leg_front_rightL_link</child>
-      <pose frame=''>0 0 0.2 0 -0 0</pose>
+      <pose frame=''>0 0 0.19 0 -0 0</pose>
       <axis>
         <xyz>-0 -1 -0</xyz>
         <use_parent_model_frame>0</use_parent_model_frame>

@@ -37,9 +37,9 @@ SOFTWARE.
           <ixx>2.94e-4</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>1.23e-3</iyy>
+          <iyy>1.21e-3</iyy>
           <iyz>0</iyz>
-          <izz>1.47e-3</izz>
+          <izz>1.5e-3</izz>
         </inertia>
         <pose frame=''>0 0 0 0 -0 0</pose>
       </inertial>
@@ -126,7 +126,7 @@ SOFTWARE.
         <pose>0.079 0 0.038 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.06 0.06 0.07</size>
+            <size>0.06 0.06 0.09</size>
           </box>
         </geometry>
       </collision>
@@ -141,13 +141,14 @@ SOFTWARE.
       <inertial>
         <mass>0.4</mass>
         <inertia>
-          <ixx>2.8e-4</ixx>
+          <ixx>3.9e-4</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>2.8e-4</iyy>
+          <iyy>3.9e-4</iyy>
           <iyz>0</iyz>
           <izz>2.4e-4</izz>
         </inertia>
+        <pose frame=''>0.079 0 0.038 0 -0 0</pose>
       </inertial>
       <sensor type="ray" name="head_hokuyo_sensor">
         <pose>0.079 0 0.07 0 0 0</pose>
@@ -224,6 +225,7 @@ SOFTWARE.
           <iyz>0</iyz>
           <izz>1.2e-4</izz>
         </inertia>
+        <pose frame=''>0.125 0 0.015 0 -0 0</pose>
       </inertial>
       <sensor type="camera" name="camera1">
         <pose>0.135 0 0.03 0 0 0</pose>
@@ -305,6 +307,7 @@ SOFTWARE.
           <iyz>0</iyz>
           <izz>8.6e-5</izz>
         </inertia>
+        <pose frame=''>-0.115 0 0.01625 0 -0 0</pose>
       </inertial>
     </link>
     <joint name="stereo_camera_joint" type="fixed">
@@ -347,6 +350,7 @@ SOFTWARE.
           <iyz>0</iyz>
           <izz>1.8e-4</izz>
         </inertia>
+        <pose frame=''>0 0 0.023 0 -0 0</pose>
       </inertial>
     </link>
     <joint name="computer_joint" type="fixed">

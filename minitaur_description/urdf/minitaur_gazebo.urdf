@@ -1018,19 +1018,19 @@
   <!-- LINK: lower_leg_${location}_link -->
   <link name="lower_leg_front_leftL_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <mass value="0.05"/>
       <inertia ixx=".00032459" ixy=".0" ixz=".0" iyy=".00032637" iyz=".0" izz=".000002178"/>
     </inertial>
@@ -1131,7 +1131,7 @@
   <joint name="toe0" type="fixed">
     <parent link="lower_leg_front_leftL_link"/>
     <child link="toe0"/>
-    <origin xyz="0 0 0.248"/>
+    <origin xyz="0 0 0.22"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <!-- LINK: lower_leg_${location}_link -->
@@ -1195,19 +1195,19 @@
   <!-- LINK: lower_leg_${location}_link -->
   <link name="lower_leg_back_leftL_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <mass value="0.05"/>
       <inertia ixx=".00032459" ixy=".0" ixz=".0" iyy=".00032637" iyz=".0" izz=".000002178"/>
     </inertial>
@@ -1308,7 +1308,7 @@
   <joint name="toe2" type="fixed">
     <parent link="lower_leg_back_leftL_link"/>
     <child link="toe2"/>
-    <origin xyz="0 0 0.248"/>
+    <origin xyz="0 0 0.22"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <!-- LINK: lower_leg_${location}_link -->
@@ -1430,19 +1430,19 @@
   <!-- LINK: lower_leg_${location}_link -->
   <link name="lower_leg_front_rightR_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <mass value="0.05"/>
       <inertia ixx=".00032459" ixy=".0" ixz=".0" iyy=".00032637" iyz=".0" izz=".000002178"/>
     </inertial>
@@ -1543,7 +1543,7 @@
   <joint name="toe5" type="fixed">
     <parent link="lower_leg_front_rightR_link"/>
     <child link="toe5"/>
-    <origin xyz="0 0 0.248"/>
+    <origin xyz="0 0 0.22"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <!-- LINK: lower_leg_${location}_link -->
@@ -1607,19 +1607,19 @@
   <!-- LINK: lower_leg_${location}_link -->
   <link name="lower_leg_back_rightR_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <geometry>
-        <box size="0.017 0.009 0.248"/>
+        <box size="0.017 0.009 0.22"/>
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0.124"/>
+      <origin rpy="0 0 0" xyz="0 0 0.11"/>
       <mass value="0.05"/>
       <inertia ixx=".00032459" ixy=".0" ixz=".0" iyy=".00032637" iyz=".0" izz=".000002178"/>
     </inertial>
@@ -1720,7 +1720,7 @@
   <joint name="toe7" type="fixed">
     <parent link="lower_leg_back_rightR_link"/>
     <child link="toe7"/>
-    <origin xyz="0 0 0.248"/>
+    <origin xyz="0 0 0.22"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
   <!-- Add ros_control plugin -->

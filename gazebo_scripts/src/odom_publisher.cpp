@@ -36,7 +36,7 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
 	// Determine the index of the robot from all the models included
 	if (robot_name == "minitaur") {
 		for (int j=0 ; j<msg->name.size() ; j++) {
-			if (msg->name[j] == "minitaur_sensor::base_chassis_link_dummy") {
+			if (msg->name[j] == "minitaur_constrained::base_chassis_link_dummy") {
 				des_index = j;
 			}
 		}
