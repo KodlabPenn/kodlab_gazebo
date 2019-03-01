@@ -32,7 +32,7 @@ SOFTWARE.
     <!-- Negative real_time_update_rate means that Gazebo will run as fast as possible -->
     <!-- A max_step_size of 0.0003 seems to work for Minitaur and 0.00005 for Vision -->
     <physics type="ode">
-      <max_step_size>0.0001</max_step_size>
+      <max_step_size>0.00001</max_step_size>
       <real_time_update_rate>10000</real_time_update_rate>
     </physics>
     <!-- <gravity>0 0 0</gravity> -->
@@ -43,9 +43,9 @@ SOFTWARE.
       <uri>model://sun</uri>
     </include>
     <include>
-      <uri>model://cart</uri>
-      <name>cart</name>
-      <pose>0.3 0 0 0 0 1.57</pose>
+      <uri>model://box</uri>
+      <name>box</name>
+      <pose>0.7 0 0 0 0 0</pose>
     </include>
   </world>
 </sdf>
