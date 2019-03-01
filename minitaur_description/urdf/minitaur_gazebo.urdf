@@ -1103,24 +1103,24 @@
         </bounce>
         <friction>
           <torsional>
-            <coefficient>0.3</coefficient>
+            <coefficient>1.0</coefficient>
           </torsional>
           <ode>
-            <mu>0.7</mu>
-            <mu2>0.7</mu2>
+            <mu>70</mu>
+            <mu2>70</mu2>
           </ode>
           <bullet>
-            <rolling_friction>0.3</rolling_friction>
-            <friction2>0.7</friction2>
+            <rolling_friction>1.0</rolling_friction>
+            <friction2>70</friction2>
           </bullet>
         </friction>
         <contact>
           <ode>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </ode>
           <bullet>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </bullet>
         </contact>
@@ -1280,24 +1280,24 @@
         </bounce>
         <friction>
           <torsional>
-            <coefficient>0.3</coefficient>
+            <coefficient>1.0</coefficient>
           </torsional>
           <ode>
-            <mu>0.7</mu>
-            <mu2>0.7</mu2>
+            <mu>70</mu>
+            <mu2>70</mu2>
           </ode>
           <bullet>
-            <rolling_friction>0.3</rolling_friction>
-            <friction2>0.7</friction2>
+            <rolling_friction>1.0</rolling_friction>
+            <friction2>70</friction2>
           </bullet>
         </friction>
         <contact>
           <ode>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </ode>
           <bullet>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </bullet>
         </contact>
@@ -1515,24 +1515,24 @@
         </bounce>
         <friction>
           <torsional>
-            <coefficient>0.3</coefficient>
+            <coefficient>1.0</coefficient>
           </torsional>
           <ode>
-            <mu>0.7</mu>
-            <mu2>0.7</mu2>
+            <mu>70</mu>
+            <mu2>70</mu2>
           </ode>
           <bullet>
-            <rolling_friction>0.3</rolling_friction>
-            <friction2>0.7</friction2>
+            <rolling_friction>1.0</rolling_friction>
+            <friction2>70</friction2>
           </bullet>
         </friction>
         <contact>
           <ode>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </ode>
           <bullet>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </bullet>
         </contact>
@@ -1692,24 +1692,24 @@
         </bounce>
         <friction>
           <torsional>
-            <coefficient>0.3</coefficient>
+            <coefficient>1.0</coefficient>
           </torsional>
           <ode>
-            <mu>0.7</mu>
-            <mu2>0.7</mu2>
+            <mu>70</mu>
+            <mu2>70</mu2>
           </ode>
           <bullet>
-            <rolling_friction>0.3</rolling_friction>
-            <friction2>0.7</friction2>
+            <rolling_friction>1.0</rolling_friction>
+            <friction2>70</friction2>
           </bullet>
         </friction>
         <contact>
           <ode>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </ode>
           <bullet>
-            <kp>30000.0</kp>
+            <kp>300000.0</kp>
             <kd>1000.0</kd>
           </bullet>
         </contact>

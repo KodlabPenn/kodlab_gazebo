@@ -3,7 +3,7 @@
 <!-- 
 MIT License (modified)
 
-Copyright (c) 2018 The Trustees of the University of Pennsylvania
+Copyright (c) 2019 The Trustees of the University of Pennsylvania
 Authors:
 Vasileios Vasilopoulos <vvasilo@seas.upenn.edu>
 
@@ -30,10 +30,10 @@ SOFTWARE.
   <world name="default">
     <!-- Target real time factor is the product of max_step_size and real_time_update_rate -->
     <!-- Negative real_time_update_rate means that Gazebo will run as fast as possible -->
-    <!-- A max_step_size of 0.0005 seems to work for Minitaur and 0.00005 for Vision -->
+    <!-- A max_step_size of 0.0003 seems to work for Minitaur and 0.00005 for Vision -->
     <physics type="ode">
-      <max_step_size>0.0005</max_step_size>
-      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.0001</max_step_size>
+      <real_time_update_rate>10000</real_time_update_rate>
     </physics>
     <!-- <gravity>0 0 0</gravity> -->
     <include>
@@ -43,9 +43,9 @@ SOFTWARE.
       <uri>model://sun</uri>
     </include>
     <include>
-      <uri>model://cart</uri>
-      <name>cart</name>
-      <pose>1.0 0.0 0 0 0 1.57</pose>
+      <uri>model://stool</uri>
+      <name>stool</name>
+      <pose>0.3 0 0 0 0 0</pose>
     </include>
   </world>
 </sdf>

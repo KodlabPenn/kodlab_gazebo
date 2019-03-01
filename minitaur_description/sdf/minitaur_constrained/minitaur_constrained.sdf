@@ -1450,24 +1450,24 @@ SOFTWARE.
           </bounce>
           <friction>
             <torsional>
-              <coefficient>0.3</coefficient>
+              <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.7</mu2>
+              <mu>70</mu>
+              <mu2>70</mu2>
             </ode>
             <bullet>
-              <rolling_friction>0.3</rolling_friction>
-              <friction2>0.7</friction2>
+              <rolling_friction>1.0</rolling_friction>
+              <friction2>70</friction2>
             </bullet>
           </friction>
           <contact>
             <ode>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
             </ode>
             <bullet>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
               <split_impulse>1</split_impulse>
               <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
@@ -1687,24 +1687,24 @@ SOFTWARE.
           </bounce>
           <friction>
             <torsional>
-              <coefficient>0.3</coefficient>
+              <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.7</mu2>
+              <mu>70</mu>
+              <mu2>70</mu2>
             </ode>
             <bullet>
-              <rolling_friction>0.3</rolling_friction>
-              <friction2>0.7</friction2>
+              <rolling_friction>1.0</rolling_friction>
+              <friction2>70</friction2>
             </bullet>
           </friction>
           <contact>
             <ode>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
             </ode>
             <bullet>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
               <split_impulse>1</split_impulse>
               <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
@@ -1924,24 +1924,24 @@ SOFTWARE.
           </bounce>
           <friction>
             <torsional>
-              <coefficient>0.3</coefficient>
+              <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.7</mu2>
+              <mu>70</mu>
+              <mu2>70</mu2>
             </ode>
             <bullet>
-              <rolling_friction>0.3</rolling_friction>
-              <friction2>0.7</friction2>
+              <rolling_friction>1.0</rolling_friction>
+              <friction2>70</friction2>
             </bullet>
           </friction>
           <contact>
             <ode>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
             </ode>
             <bullet>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
               <split_impulse>1</split_impulse>
               <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
@@ -2161,24 +2161,24 @@ SOFTWARE.
           </bounce>
           <friction>
             <torsional>
-              <coefficient>0.3</coefficient>
+              <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.7</mu2>
+              <mu>70</mu>
+              <mu2>70</mu2>
             </ode>
             <bullet>
-              <rolling_friction>0.3</rolling_friction>
-              <friction2>0.7</friction2>
+              <rolling_friction>1.0</rolling_friction>
+              <friction2>70</friction2>
             </bullet>
           </friction>
           <contact>
             <ode>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
             </ode>
             <bullet>
-              <kp>30000</kp>
+              <kp>300000</kp>
               <kd>1000</kd>
               <split_impulse>1</split_impulse>
               <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
