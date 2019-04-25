@@ -1453,12 +1453,12 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>70</mu>
-              <mu2>70</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
-              <friction2>70</friction2>
+              <friction2>1.0</friction2>
             </bullet>
           </friction>
           <contact>
@@ -1690,12 +1690,12 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>70</mu>
-              <mu2>70</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
-              <friction2>70</friction2>
+              <friction2>1.0</friction2>
             </bullet>
           </friction>
           <contact>
@@ -1927,12 +1927,12 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>70</mu>
-              <mu2>70</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
-              <friction2>70</friction2>
+              <friction2>1.0</friction2>
             </bullet>
           </friction>
           <contact>
@@ -2164,12 +2164,12 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>70</mu>
-              <mu2>70</mu2>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
-              <friction2>70</friction2>
+              <friction2>1.0</friction2>
             </bullet>
           </friction>
           <contact>

@@ -63,7 +63,7 @@
 	<xacro:property name="toeStiffness" value="300000.0"/>
 	<xacro:property name="toeDamping" value="1000.0"/>
 	<xacro:property name="toeSpinningFriction" value="1.0"/>
-	<xacro:property name="toeLateralFriction" value="70"/>
+	<xacro:property name="toeLateralFriction" value="1.0"/>
 
 	<!-- LINK: Body dummy -->
 	<link name="base_chassis_link_dummy">
