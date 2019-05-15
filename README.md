@@ -200,7 +200,7 @@ However, you also need to do the following after the conversion:
     </contact>
 </sensor>
 ```
-3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format example. Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '13' and '15' and negative for '8', '10', '12' and '14'.
+3. To help Minitaur with turning, you need to make joints '8', '9', '10', '11', '12', '13', '14' and '15' universal, to match the following format example. Make sure that the sign of 1 in `<xyz>` for both axes is positive for joints '9', '11', '13' and '15' (and with limits -2.091 and 1.049) and negative for '8', '10', '12' and '14' (and with limits -1.049 and 2.091).
 ```
     <joint name='9' type='universal'>
       <child>lower_leg_front_leftR_link</child>
@@ -208,8 +208,8 @@ However, you also need to do the following after the conversion:
       <axis>
         <xyz>-0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.091</lower>
+          <upper>1.049</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
