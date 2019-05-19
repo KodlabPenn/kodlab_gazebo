@@ -777,11 +777,11 @@ SOFTWARE.
       </collision>
 
       <visual name='cylinder_front_right_visual'>
-        <pose frame=''>0.269 0.194 0.495 0 -0 0</pose>
+        <pose frame=''>0.269 0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <material>
@@ -797,11 +797,11 @@ SOFTWARE.
       <collision name='cylinder_front_right_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0.269 0.194 0.495 0 -0 0</pose>
+        <pose frame=''>0.269 0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <surface>
@@ -852,11 +852,11 @@ SOFTWARE.
       </collision>
 
       <visual name='cylinder_front_left_visual'>
-        <pose frame=''>-0.269 0.194 0.495 0 -0 0</pose>
+        <pose frame=''>-0.269 0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <material>
@@ -872,11 +872,11 @@ SOFTWARE.
       <collision name='cylinder_front_left_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>-0.269 0.194 0.495 0 -0 0</pose>
+        <pose frame=''>-0.269 0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <surface>
@@ -927,11 +927,11 @@ SOFTWARE.
       </collision>
 
       <visual name='cylinder_back_left_visual'>
-        <pose frame=''>-0.269 -0.194 0.495 0 -0 0</pose>
+        <pose frame=''>-0.269 -0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <material>
@@ -947,11 +947,11 @@ SOFTWARE.
       <collision name='cylinder_back_left_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>-0.269 -0.194 0.495 0 -0 0</pose>
+        <pose frame=''>-0.269 -0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <surface>
@@ -1002,11 +1002,11 @@ SOFTWARE.
       </collision>
 
       <visual name='cylinder_back_right_visual'>
-        <pose frame=''>0.269 -0.194 0.495 0 -0 0</pose>
+        <pose frame=''>0.269 -0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <material>
@@ -1022,11 +1022,11 @@ SOFTWARE.
       <collision name='cylinder_back_right_collision'>
         <laser_retro>0</laser_retro>
         <max_contacts>10</max_contacts>
-        <pose frame=''>0.269 -0.194 0.495 0 -0 0</pose>
+        <pose frame=''>0.269 -0.194 0.488 0 -0 0</pose>
         <geometry>
           <cylinder>
             <radius>0.021</radius>
-            <length>0.38</length>
+            <length>0.52</length>
           </cylinder>
         </geometry>
         <surface>
