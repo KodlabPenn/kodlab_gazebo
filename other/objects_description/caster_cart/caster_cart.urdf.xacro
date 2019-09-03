@@ -93,7 +93,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
     <parent link="caster_top" />
     <child link="caster_wheel" />
     <axis xyz="0 1 0"/>
-    <dynamics damping="0.004"/>
+    <dynamics damping="0.04"/>
   </joint>
 
 
