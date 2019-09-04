@@ -1453,8 +1453,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -1690,8 +1690,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -1927,8 +1927,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -2164,8 +2164,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
