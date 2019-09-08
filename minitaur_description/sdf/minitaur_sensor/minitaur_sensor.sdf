@@ -752,8 +752,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -764,8 +764,8 @@ SOFTWARE.
       <axis2>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -929,8 +929,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -941,8 +941,8 @@ SOFTWARE.
       <axis2>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1106,8 +1106,8 @@ SOFTWARE.
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1118,8 +1118,8 @@ SOFTWARE.
       <axis2>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1283,8 +1283,8 @@ SOFTWARE.
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1295,8 +1295,8 @@ SOFTWARE.
       <axis2>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1453,8 +1453,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -1520,8 +1520,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1532,8 +1532,8 @@ SOFTWARE.
       <axis2>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1690,8 +1690,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -1757,8 +1757,8 @@ SOFTWARE.
       <axis>
         <xyz>0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1769,8 +1769,8 @@ SOFTWARE.
       <axis2>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1927,8 +1927,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -1994,8 +1994,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -2006,8 +2006,8 @@ SOFTWARE.
       <axis2>
         <xyz>-1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -2164,8 +2164,8 @@ SOFTWARE.
               <coefficient>1.0</coefficient>
             </torsional>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>10.0</mu>
+              <mu2>10.0</mu2>
             </ode>
             <bullet>
               <rolling_friction>1.0</rolling_friction>
@@ -2231,8 +2231,8 @@ SOFTWARE.
       <axis>
         <xyz>0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -2243,8 +2243,8 @@ SOFTWARE.
       <axis2>
         <xyz>1 0 0</xyz>
         <limit>
-          <lower>-0.02</lower>
-          <upper>0.02</upper>
+          <lower>-0.05</lower>
+          <upper>0.05</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>

@@ -752,8 +752,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -929,8 +929,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1106,8 +1106,8 @@ SOFTWARE.
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1283,8 +1283,8 @@ SOFTWARE.
       <axis>
         <xyz>0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1520,8 +1520,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1757,8 +1757,8 @@ SOFTWARE.
       <axis>
         <xyz>0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1994,8 +1994,8 @@ SOFTWARE.
       <axis>
         <xyz>-0 -1 0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-2.000</lower>
+          <upper>1.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -2231,8 +2231,8 @@ SOFTWARE.
       <axis>
         <xyz>0 1 -0</xyz>
         <limit>
-          <lower>-1e+16</lower>
-          <upper>1e+16</upper>
+          <lower>-1.000</lower>
+          <upper>2.000</upper>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
