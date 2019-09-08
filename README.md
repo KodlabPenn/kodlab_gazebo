@@ -11,7 +11,7 @@ Maintainer: Vasileios Vasilopoulos (<vvasilo@seas.upenn.edu>)
 ## Running the simulation
 1. For the package to work properly, make sure you have installed the following packages:
 ```
-$ sudo apt-get install ros-kinetic-controller-manager ros-kinetic-joint-state-controller ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control ros-kinetic-effort-controllers
+$ sudo apt-get install ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control ros-melodic-effort-controllers
 ``` 
 
 2. Copy the package to your ROS workspace folder
