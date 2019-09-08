@@ -12,21 +12,34 @@ Maintainer: Vasileios Vasilopoulos (<vvasilo@seas.upenn.edu>)
 1. For the package to work properly, make sure you have installed the following packages:
 ```
 $ sudo apt-get install ros-melodic-controller-manager ros-melodic-joint-state-controller ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control ros-melodic-effort-controllers
-``` 
+```
 
-2. Copy the package to your ROS workspace folder
+1. For some illustrations, we also use the package [3DGEMS](http://data.nvision2.eecs.yorku.ca/3DGEMS/). Download all the subfolders mentioned on the package website and put them in a separate folder.
+
+1. Copy the package to your ROS workspace folder
 ```
 $ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
 ```
 
-3. The following line needs to be added in `~/.bashrc` to allow for proper Gazebo model detection
+1. The following line needs to be added in `~/.bashrc` to allow for proper Gazebo model detection
 ```
-export GAZEBO_MODEL_PATH=<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
 ```
 
-4. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0005 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
+1. Also, the following line needs to be added in `~/.bashrc` to allow for proper use of [3DGEMS](http://data.nvision2.eecs.yorku.ca/3DGEMS/)
+```
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<3dgems_models_location>/decoration:<3dgems_models_location>/earthquake:<3dgems_models_location>/electronics:<3dgems_models_location>/food:<3dgems_models_location>/furniture:<3dgems_models_location>/kitchen:<3dgems_models_location>/miscellaneous:<3dgems_models_location>/shapes:<3dgems_models_location>/stationery:<3dgems_models_location>/tools
+```
 
-5. To launch the simulation, build the package and run:
+1. Configure [ghost.world](gazebo_scripts/worlds/ghost.world) (or any other [world](gazebo_scripts/worlds) file) to include anything you want to show up in your simulation. In this file, you can also configure `max_step_size` and `real_time_update_rate` for the simulation. Usually a `max_step_size` of 0.0005 works for Minitaur. Vision needs a smaller value for contact forces (0.00005 should be enough). Currently, `real_time_update_rate` is configured to 2000Hz.
+
+1. Build all the packages
+```
+$ cd <catkin_ws_location>
+$ catkin build
+```
+
+1. To launch the simulation, build the package and run:
 ```
 $ roslaunch gazebo_scripts minitaur_gazebo.launch
 ```

@@ -1494,7 +1494,17 @@ SOFTWARE.
       <name>stool</name>
       <uri>model://stool</uri>
       <pose>4.5 0 0.0 0 0 0</pose>
+      <static>false</static>
+    </include>
+    <include>
+      <name>table_tag</name>
+      <uri>model://tag36_11_00005</uri>
+      <pose>-4.06 0 0.41 0 0 3.14</pose>
       <static>true</static>
     </include>
+    <joint name="tag_table_joint" type="fixed">
+      <child>table_tag::link</child>
+      <parent>table_conference_2::link_3</parent>
+    </joint>
   </world>
 </sdf>

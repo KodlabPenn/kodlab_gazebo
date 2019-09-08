@@ -1488,7 +1488,7 @@ SOFTWARE.
       <name>stool</name>
       <uri>model://stool</uri>
       <pose>4.5 0 0.0 0 0 0</pose>
-      <static>true</static>
+      <static>false</static>
     </include>
   </world>
 </sdf>
