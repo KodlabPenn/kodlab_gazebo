@@ -1490,7 +1490,7 @@ SOFTWARE.
     <include>
       <name>stool</name>
       <uri>model://stool</uri>
-      <pose>4.5 0 0.0 0 0 0</pose>
+      <pose>4.4 0 0.0 0 0 0</pose>
       <static>false</static>
     </include>
     <include>

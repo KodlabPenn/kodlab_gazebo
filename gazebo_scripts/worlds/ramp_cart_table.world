@@ -1203,6 +1203,12 @@ SOFTWARE.
     <include>
       <name>ramp</name>
       <uri>model://box_ramp</uri>
+      <pose>-4.45 0.72 0.01 0 0 1.57</pose>
+      <static>true</static>
+    </include>
+    <include>
+      <name>box_tall</name>
+      <uri>model://box_tall</uri>
       <pose>-4.45 0 0.01 0 0 1.57</pose>
       <static>true</static>
     </include>
@@ -1218,7 +1224,7 @@ SOFTWARE.
     </joint>
     <include>
       <name>cart</name>
-      <uri>model://cart_short</uri>
+      <uri>model://cart</uri>
       <pose>-2.0 -0.75 0.0 0 0 1.57</pose>
       <static>false</static>
     </include>
