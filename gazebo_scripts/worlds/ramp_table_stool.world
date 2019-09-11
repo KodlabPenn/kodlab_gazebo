@@ -1122,12 +1122,11 @@ SOFTWARE.
         <collision name='collision'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
+          <pose frame=''>0 0 0.67 0 -0 0</pose>
           <geometry>
-            <mesh>
-              <uri>model://table_conference_2/meshes/top.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
+            <box>
+              <size>2.7 1.2 0.06782</size>
+            </box>
           </geometry>
           <surface>
             <contact>
@@ -1265,12 +1264,11 @@ SOFTWARE.
         <collision name='collision'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
+          <pose frame=''>0 0 0.67 0 -0 0</pose>
           <geometry>
-            <mesh>
-              <uri>model://table_conference_2/meshes/top.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
+            <box>
+              <size>2.7 1.2 0.06782</size>
+            </box>
           </geometry>
           <surface>
             <contact>
@@ -1408,12 +1406,11 @@ SOFTWARE.
         <collision name='collision'>
           <laser_retro>0</laser_retro>
           <max_contacts>10</max_contacts>
-          <pose frame=''>0 0 0 0 -0 0</pose>
+          <pose frame=''>0 0 0.67 0 -0 0</pose>
           <geometry>
-            <mesh>
-              <uri>model://table_conference_2/meshes/top.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
+            <box>
+              <size>2.7 1.2 0.06782</size>
+            </box>
           </geometry>
           <surface>
             <contact>
@@ -1487,13 +1484,13 @@ SOFTWARE.
     <include>
       <name>ramp</name>
       <uri>model://box_ramp</uri>
-      <pose>-4.4 0 0.01 0 0 1.57</pose>
+      <pose>-4.45 0 0.01 0 0 1.57</pose>
       <static>true</static>
     </include>
     <include>
       <name>stool</name>
       <uri>model://stool</uri>
-      <pose>4.5 0 0.0 0 0 0</pose>
+      <pose>4.4 0 0.0 0 0 0</pose>
       <static>false</static>
     </include>
     <include>
