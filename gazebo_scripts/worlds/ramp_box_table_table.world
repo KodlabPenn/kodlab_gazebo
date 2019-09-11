@@ -1198,7 +1198,7 @@ SOFTWARE.
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-4.25 -2.45 -0.25 0 -0 1.57</pose>
+      <pose frame=''>-4.25 -2.05 -0.25 0 -0 1.57</pose>
     </model>
     <model name='table_conference_2_clone'>
       <link name='link_2'>
@@ -1343,7 +1343,7 @@ SOFTWARE.
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-1.65 -2.35 -0.25 0 -0 0</pose>
+      <pose frame=''>-1.95 -2.05 -0.25 0 -0 0</pose>
     </model>
     <include>
       <name>ramp</name>
@@ -1360,7 +1360,7 @@ SOFTWARE.
     <include>
       <name>table_tag_1</name>
       <uri>model://tag36_11_00005</uri>
-      <pose>-4.25 -1.0 0.36 0 0 1.57</pose>
+      <pose>-4.25 -0.7 0.36 0 0 1.57</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
@@ -1370,7 +1370,7 @@ SOFTWARE.
     <include>
       <name>table_tag_2</name>
       <uri>model://tag36_11_00006</uri>
-      <pose>-3.01 -2.45 0.36 0 0 3.14</pose>
+      <pose>-3.31 -2.05 0.36 0 0 3.14</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
