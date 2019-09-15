@@ -1198,29 +1198,35 @@ SOFTWARE.
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-4.25 -1.95 -0.25 0 -0 1.57</pose>
+      <pose frame=''>-4.25 -2.05 -0.25 0 -0 1.57</pose>
     </model>
     <include>
       <name>ramp</name>
       <uri>model://box_ramp</uri>
-      <pose>-4.45 0.72 0.01 0 0 1.57</pose>
+      <pose>-4.45 1.12 0.01 0 0 1.57</pose>
       <static>true</static>
     </include>
     <include>
       <name>box_tall</name>
       <uri>model://box_tall</uri>
-      <pose>-4.45 0 0.01 0 0 1.57</pose>
+      <pose>-4.45 0.4 0.01 0 0 1.57</pose>
       <static>true</static>
     </include>
     <include>
       <name>table_tag</name>
       <uri>model://tag36_11_00005</uri>
-      <pose>-4.25 -0.6 0.36 0 0 1.57</pose>
+      <pose>-4.25 -0.7 0.36 0 0 1.57</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
       <child>table_tag::link</child>
       <parent>table_conference_2::link_3</parent>
     </joint>
+    <include>
+      <name>cart</name>
+      <uri>model://cart</uri>
+      <pose>-1.5 -0.3 0 0 0 1.57</pose>
+      <static>false</static>
+    </include>
   </world>
 </sdf>

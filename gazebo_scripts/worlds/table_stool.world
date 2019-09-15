@@ -1479,12 +1479,12 @@ SOFTWARE.
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>2.7 0 -0.2 0 -0 0</pose>
+      <pose frame=''>2.6 0 -0.2 0 -0 0</pose>
     </model>
     <include>
       <name>stool</name>
       <uri>model://stool</uri>
-      <pose>4.4 0 0.0 0 0 0</pose>
+      <pose>4.4 0.5 0.0 0 0 0</pose>
       <static>false</static>
     </include>
   </world>

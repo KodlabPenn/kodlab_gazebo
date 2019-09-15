@@ -42,7 +42,7 @@ SOFTWARE.
   <!-- Also change texture to cl5.jpg in miscellaneous/office_small/materials/scripts/Floor.material -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-    <arg name="world_name" value="$(find gazebo_scripts)/worlds/ramp_box_table.world"/>
+    <arg name="world_name" value="$(find gazebo_scripts)/worlds/ramp_box_cart_table_table.world"/>
     <arg name="gui" value="true"/>
     <arg name="physics" value="ode"/>
   </include>
@@ -52,7 +52,7 @@ SOFTWARE.
   <param name="robot_description_sdf" textfile="$(find minitaur_description)/sdf/minitaur_sensor/minitaur_sensor.sdf" />
 
   <!-- Spawn SDF model -->
-  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model minitaur_constrained -x 0 -y -0 -z 0.4 -Y 0" output="screen"/>
+  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model minitaur_constrained -x 0 -y -0.3 -z 0.4 -Y 3.14" output="screen"/>
 
   <!-- Spawn TF tree -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
