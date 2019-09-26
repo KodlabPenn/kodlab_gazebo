@@ -1,10 +1,10 @@
-# ghost_gazebo
-ROS package for the simulation of Ghost Robotics platforms using Gazebo
+# kodlab_gazebo
+ROS package for the simulation of robotic platforms using Gazebo
 
 Maintainer: Vasileios Vasilopoulos (<vvasilo@seas.upenn.edu>)
 
 ## General notes
-1. This ROS package is used in conjunction with and included in the `thirdparty` folder of the Ghost Robotics SDK artifacts, which are independently distributed by Ghost Robotics.
+1. This ROS package can be used in conjunction with the Ghost Robotics SDK artifacts, which are independently distributed by Ghost Robotics.
 2. At this point, there is no open source Vision60 control example in the SDK, but once released the following procedure should be identical. For now, you can just launch the Vision60 simulation as explained below.
 3. The simulation depends a lot on friction parameters. These parameters can be configured in the URDF xacro files ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro) and [vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro)).
 
@@ -18,12 +18,12 @@ $ sudo apt-get install ros-melodic-controller-manager ros-melodic-joint-state-co
 
 3. Copy the package to your ROS workspace folder
 ```
-$ cp -r <artifacts_location>/thirdparty/ghost_gazebo <catkin_ws_location>/src
+$ cp -r <artifacts_location>/thirdparty/kodlab_gazebo <catkin_ws_location>/src
 ```
 
 4. The following line needs to be added in `~/.bashrc` to allow for proper Gazebo model detection
 ```
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<catkin_ws_location>/src/ghost_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/ghost_gazebo/minitaur_description:<catkin_ws_location>/src/ghost_gazebo/vision60_description
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description:<catkin_ws_location>/src/kodlab_gazebo/vision60_description
 ```
 
 5. Also, the following line needs to be added in `~/.bashrc` to allow for proper use of [3DGEMS](http://data.nvision2.eecs.yorku.ca/3DGEMS/)
@@ -53,10 +53,10 @@ $ roslaunch gazebo_scripts vision60_gazebo.launch
 ```
 for Vision60.
 
-9. Compile and run the corresponding Ghost Robotics SDK script to control the robot. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
+9. (Optional) If you want to control the robot using the Ghost SDK, compile and run the corresponding Ghost Robotics SDK script. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
 ```
 $ mv <artifacts_location>/examples/FirstHop/Makefile <artifacts_location>/examples/FirstHop/Makefile.bk
-$ cp <artifacts_location>/thirdparty/ghost_gazebo/extras/Makefile <artifacts_location>/examples/FirstHop/Makefile
+$ cp <artifacts_location>/thirdparty/kodlab_gazebo/extras/Makefile <artifacts_location>/examples/FirstHop/Makefile
 $ cd <artifacts_location>/examples/FirstHop
 $ make
 $ ./FirstHop_MINITAUR_E
@@ -295,7 +295,7 @@ Except for the robots, we also include other useful descriptions of objects for 
 
 We have included the Gazebo model descriptions of some members of the 36h11 [AprilTag](https://april.eecs.umich.edu/software/apriltag) family. Make sure to add the descriptions to your `GAZEBO_MODEL_PATH` by adding the following line to your `~/.bashrc` file:
 ```
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:<catkin_ws_location>/src/ghost_gazebo/other/apriltags_description
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:<catkin_ws_location>/src/kodlab_gazebo/other/apriltags_description
 ```
 
 If you want to generate your own descriptions, you can download pre-generated tags [here](https://april.eecs.umich.edu/software/apriltag). Those tags (`.png` images) are quite small, so you might need to enlarge them (we suggest [gimp](https://www.gimp.org/) - make sure to scale the images with `None` as the interpolation method). The package we used for the automated SDF model generation can be found [here](https://github.com/vvasilo/gazebo_models). The size of the generated tags (including the white margin) was set to 85mm. The dimension ratio between the tag's black square and the outside box (that includes the white margin) is approximately 0.8; this can be used to appropriately scale your tags.
