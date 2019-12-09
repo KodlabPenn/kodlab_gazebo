@@ -1949,6 +1949,22 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <collision name='hook_L_collision'>
+        <pose frame=''>0.03 0 0.18 0 -0.9 0</pose>
+        <geometry>
+          <box>
+            <size>0.009 0.009 0.09</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
       <sensor name="toe0_contact" type="contact">
         <plugin name="toe0_plugin" filename="libcontact.so"/>
         <contact>
@@ -1979,6 +1995,20 @@ SOFTWARE.
         <material>
           <script>
             <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='hook_L_visual'>
+        <pose frame=''>0.03 0 0.18 0 -0.9 0</pose>
+        <geometry>
+          <box>
+            <size>0.009 0.009 0.09</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
@@ -2186,6 +2216,22 @@ SOFTWARE.
           </contact>
         </surface>
       </collision>
+      <collision name='hook_R_collision'>
+        <pose frame=''>0.03 0 0.18 0 -0.9 0</pose>
+        <geometry>
+          <box>
+            <size>0.009 0.009 0.09</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
       <sensor name="toe2_contact" type="contact">
         <plugin name="toe2_plugin" filename="libcontact.so"/>
         <contact>
@@ -2216,6 +2262,20 @@ SOFTWARE.
         <material>
           <script>
             <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='hook_R_visual'>
+        <pose frame=''>0.03 0 0.18 0 -0.9 0</pose>
+        <geometry>
+          <box>
+            <size>0.009 0.009 0.09</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
         </material>
