@@ -27,7 +27,7 @@ SOFTWARE.
 -->
 
 <sdf version='1.6'>
-  <model name='minitaur_hooks'>
+  <model name='minitaur_constrained'>
     <link name='base_chassis_link_dummy'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
