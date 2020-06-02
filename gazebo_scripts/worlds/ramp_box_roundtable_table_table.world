@@ -1200,6 +1200,151 @@ SOFTWARE.
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>-4.25 -2.05 -0.25 0 -0 1.57</pose>
     </model>
+    <model name='table_conference_2_clone'>
+      <link name='link_2'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_conference_2/meshes/base.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://table_conference_2/materials/scripts</uri>
+              <uri>model://table_conference_2/materials/textures</uri>
+              <name>table_conf_2_legs</name>
+            </script>
+          </material>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://table_conference_2/meshes/base.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='link_3'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_conference_2/meshes/top.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://table_conference_2/materials/scripts</uri>
+              <uri>model://table_conference_2/materials/textures</uri>
+              <name>table_conf_2_top</name>
+            </script>
+          </material>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0.67 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.7 1.2 0.06782</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='link_4'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://table_conference_2/meshes/glasses.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <lighting>1</lighting>
+            <ambient>0.278 0.776 0.776 1</ambient>
+            <diffuse>0.278 0.776 0.776 1</diffuse>
+            <specular>0.01 0.01 0.01 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0.4</transparency>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://table_conference_2/meshes/glasses.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>-1.95 -2.05 -0.25 0 -0 0</pose>
+    </model>
     <include>
       <name>ramp</name>
       <uri>model://box_ramp</uri>
@@ -1213,18 +1358,28 @@ SOFTWARE.
       <static>true</static>
     </include>
     <include>
-      <name>table_tag</name>
+      <name>table_tag_1</name>
       <uri>model://tag36_11_00005</uri>
       <pose>-4.25 -0.7 0.36 0 0 1.57</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
-      <child>table_tag::link</child>
+      <child>table_tag_1::link</child>
       <parent>table_conference_2::link_3</parent>
     </joint>
     <include>
-      <name>cart</name>
-      <uri>model://cart</uri>
+      <name>table_tag_2</name>
+      <uri>model://tag36_11_00006</uri>
+      <pose>-3.31 -2.05 0.36 0 0 3.14</pose>
+      <static>true</static>
+    </include>
+    <joint name="tag_table_joint" type="fixed">
+      <child>table_tag_2::link</child>
+      <parent>table_conference_2::link_3</parent>
+    </joint>
+    <include>
+      <name>round_table</name>
+      <uri>model://round_table</uri>
       <pose>-1.5 -0.3 0 0 0 1.57</pose>
       <static>false</static>
     </include>

@@ -42,7 +42,7 @@ SOFTWARE.
   <!-- Also change texture to cl5.jpg in miscellaneous/office_small/materials/scripts/Floor.material -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-    <arg name="world_name" value="$(find gazebo_scripts)/worlds/ramp_box_cart_table_table.world"/>
+    <arg name="world_name" value="$(find gazebo_scripts)/worlds/ramp_box_roundtable_table.world"/>
     <arg name="gui" value="true"/>
     <arg name="physics" value="ode"/>
   </include>
