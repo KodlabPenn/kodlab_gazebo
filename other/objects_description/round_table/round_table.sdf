@@ -309,8 +309,6 @@ SOFTWARE.
         <transparency>0</transparency>
       </visual>
       <collision name='seat_collision'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0.508 0 -0 0</pose>
         <geometry>
           <cylinder>
@@ -321,47 +319,10 @@ SOFTWARE.
         <surface>
           <friction>
             <ode>
-              <mu>2</mu>
-              <mu2>2</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
+              <mu>100</mu>
+              <mu2>50</mu2>
             </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
           </friction>
-          <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-            <threshold>1e+06</threshold>
-          </bounce>
-          <contact>
-            <collide_without_contact>0</collide_without_contact>
-            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-            <collide_bitmask>1</collide_bitmask>
-            <ode>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-            <bullet>
-              <split_impulse>1</split_impulse>
-              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-            </bullet>
-          </contact>
         </surface>
       </collision>
     </link>
@@ -404,6 +365,39 @@ SOFTWARE.
     </include>
     <joint name="tag_3_joint" type="fixed">
       <child>tag_3::link</child>
+      <parent>rim</parent>
+    </joint>
+
+    <include>
+      <name>tag_4</name>
+      <uri>model://tag36_11_00008</uri>
+      <pose>0 -0.03 0.533 0 0 -1.57</pose>
+      <static>false</static>
+    </include>
+    <joint name="tag_4_joint" type="fixed">
+      <child>tag_4::link</child>
+      <parent>rim</parent>
+    </joint>
+
+    <include>
+      <name>tag_5</name>
+      <uri>model://tag36_11_00008</uri>
+      <pose>-0.026 0.015 0.533 0 0 2.618</pose>
+      <static>false</static>
+    </include>
+    <joint name="tag_5_joint" type="fixed">
+      <child>tag_5::link</child>
+      <parent>rim</parent>
+    </joint>
+
+    <include>
+      <name>tag_6</name>
+      <uri>model://tag36_11_00008</uri>
+      <pose>0.026 0.015 0.533 0 0 0.5236</pose>
+      <static>false</static>
+    </include>
+    <joint name="tag_6_joint" type="fixed">
+      <child>tag_6::link</child>
       <parent>rim</parent>
     </joint>
 
