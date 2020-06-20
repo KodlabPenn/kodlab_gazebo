@@ -31,7 +31,7 @@ SOFTWARE.
     <link name='box'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <mass>200</mass>
+        <mass>1000</mass>
         <inertia>
           <ixx>4.78</ixx>
           <ixy>0</ixy>
@@ -64,8 +64,6 @@ SOFTWARE.
         <transparency>0</transparency>
       </visual>
       <collision name='box_collision'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
@@ -75,24 +73,10 @@ SOFTWARE.
         <surface>
           <friction>
             <ode>
-              <mu>30</mu>
-              <mu2>30</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
+              <mu>100</mu>
+              <mu2>50</mu2>
             </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
           </friction>
-          <bounce/>
-          <contact/>
         </surface>
       </collision>
     </link>
@@ -141,7 +125,7 @@ SOFTWARE.
       <parent>box</parent>
     </joint>
 
-    <static>0</static>
+    <static>1</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>

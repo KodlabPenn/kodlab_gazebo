@@ -63,12 +63,12 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
     // Store the first pose of the odom frame in the global Gazebo frame - Runs only once
     if (flag_first) {
         odom_to_global_pos = tf::Vector3(msg->pose[des_index].position.x + child_frame_x, msg->pose[des_index].position.y + child_frame_y, msg->pose[des_index].position.z + child_frame_z);
-        odom_to_global_rot = child_to_robot*robot_to_global;
+        odom_to_global_rot = robot_to_global*child_to_robot;
         flag_first = false;
     }
 
     // Find orientation of child frame in odom frame
-    tf::Quaternion child_to_odom = child_to_robot*robot_to_global*odom_to_global_rot.inverse();
+    tf::Quaternion child_to_odom = odom_to_global_rot.inverse()*robot_to_global*child_to_robot;
 
     // Initialize Odometry message
     nav_msgs::Odometry msg_odometry;
@@ -95,14 +95,14 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
 
 	// Get angular twist
 	tf::Vector3 vector_angular(msg->twist[des_index].angular.x, msg->twist[des_index].angular.y, msg->twist[des_index].angular.z);
-	tf::Vector3 rotated_vector_angular = tf::quatRotate((child_to_robot*robot_to_global).inverse(), vector_angular);
+	tf::Vector3 rotated_vector_angular = tf::quatRotate((robot_to_global*child_to_robot).inverse(), vector_angular);
 	msg_odometry.twist.twist.angular.x = rotated_vector_angular.getX();
 	msg_odometry.twist.twist.angular.y = rotated_vector_angular.getY();
 	msg_odometry.twist.twist.angular.z = rotated_vector_angular.getZ();
 
 	// Get linear twist
 	tf::Vector3 vector_linear(msg->twist[des_index].linear.x, msg->twist[des_index].linear.y, msg->twist[des_index].linear.z);
-	tf::Vector3 rotated_vector_linear = tf::quatRotate((child_to_robot*robot_to_global).inverse(), vector_linear);
+	tf::Vector3 rotated_vector_linear = tf::quatRotate((robot_to_global*child_to_robot).inverse(), vector_linear);
 	msg_odometry.twist.twist.linear.x = rotated_vector_linear.getX();
 	msg_odometry.twist.twist.linear.y = rotated_vector_linear.getY();
 	msg_odometry.twist.twist.linear.z = rotated_vector_linear.getZ();
