@@ -84,7 +84,7 @@ SOFTWARE.
     <include>
       <name>tag_length_front</name>
       <uri>model://tag36_11_00007</uri>
-      <pose>0 0.362 0.355 0 0 1.57</pose>
+      <pose>0 0.362 0.375 0 0 1.57</pose>
       <static>false</static>
     </include>
     <joint name="tag_length_front_joint" type="fixed">
@@ -95,7 +95,7 @@ SOFTWARE.
     <include>
       <name>tag_length_back</name>
       <uri>model://tag36_11_00007</uri>
-      <pose>0 -0.362 0.355 0 0 -1.57</pose>
+      <pose>0 -0.362 0.375 0 0 -1.57</pose>
       <static>false</static>
     </include>
     <joint name="tag_length_back_joint" type="fixed">
@@ -106,7 +106,7 @@ SOFTWARE.
     <include>
       <name>tag_width_right</name>
       <uri>model://tag36_11_00007</uri>
-      <pose>0.362 0 0.355 0 0 0</pose>
+      <pose>0.362 0 0.375 0 0 0</pose>
       <static>false</static>
     </include>
     <joint name="tag_width_right_joint" type="fixed">
@@ -117,7 +117,7 @@ SOFTWARE.
     <include>
       <name>tag_width_left</name>
       <uri>model://tag36_11_00007</uri>
-      <pose>-0.362 0 0.355 0 0 3.14</pose>
+      <pose>-0.362 0 0.375 0 0 3.14</pose>
       <static>false</static>
     </include>
     <joint name="tag_width_left_joint" type="fixed">

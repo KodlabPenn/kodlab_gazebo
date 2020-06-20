@@ -31,7 +31,7 @@ SOFTWARE.
     <link name='box'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <mass>200</mass>
+        <mass>1000</mass>
         <inertia>
           <ixx>4.78</ixx>
           <ixy>0</ixy>
@@ -64,8 +64,6 @@ SOFTWARE.
         <transparency>0</transparency>
       </visual>
       <collision name='box_collision'>
-        <laser_retro>0</laser_retro>
-        <max_contacts>10</max_contacts>
         <pose frame=''>0 0 0.11 0 -0 0</pose>
         <geometry>
           <box>
@@ -75,47 +73,10 @@ SOFTWARE.
         <surface>
           <friction>
             <ode>
-              <mu>30</mu>
-              <mu2>30</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
+              <mu>100</mu>
+              <mu2>50</mu2>
             </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
           </friction>
-          <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-            <threshold>1e+06</threshold>
-          </bounce>
-          <contact>
-            <collide_without_contact>0</collide_without_contact>
-            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-            <collide_bitmask>1</collide_bitmask>
-            <ode>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-            <bullet>
-              <split_impulse>1</split_impulse>
-              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-            </bullet>
-          </contact>
         </surface>
       </collision>
     </link>
@@ -167,47 +128,10 @@ SOFTWARE.
         <surface>
           <friction>
             <ode>
-              <mu>30</mu>
-              <mu2>30</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
+              <mu>100</mu>
+              <mu2>50</mu2>
             </ode>
-            <torsional>
-              <coefficient>1</coefficient>
-              <patch_radius>0</patch_radius>
-              <surface_radius>0</surface_radius>
-              <use_patch_radius>1</use_patch_radius>
-              <ode>
-                <slip>0</slip>
-              </ode>
-            </torsional>
           </friction>
-          <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-            <threshold>1e+06</threshold>
-          </bounce>
-          <contact>
-            <collide_without_contact>0</collide_without_contact>
-            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-            <collide_bitmask>1</collide_bitmask>
-            <ode>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-              <max_vel>0.01</max_vel>
-              <min_depth>0</min_depth>
-            </ode>
-            <bullet>
-              <split_impulse>1</split_impulse>
-              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-              <soft_cfm>0</soft_cfm>
-              <soft_erp>0.2</soft_erp>
-              <kp>1e+13</kp>
-              <kd>1</kd>
-            </bullet>
-          </contact>
         </surface>
       </collision>
     </link>
@@ -220,7 +144,7 @@ SOFTWARE.
     <include>
       <name>tag_length_front</name>
       <uri>model://tag36_11_00004</uri>
-      <pose>0 0.362 0.135 0 0 1.57</pose>
+      <pose>0 0.362 0.155 0 0 1.57</pose>
       <static>false</static>
     </include>
     <joint name="tag_length_front_joint" type="fixed">
@@ -231,7 +155,7 @@ SOFTWARE.
     <include>
       <name>tag_length_back</name>
       <uri>model://tag36_11_00004</uri>
-      <pose>0 -0.362 0.135 0 0 -1.57</pose>
+      <pose>0 -0.362 0.155 0 0 -1.57</pose>
       <static>false</static>
     </include>
     <joint name="tag_length_back_joint" type="fixed">
@@ -253,7 +177,7 @@ SOFTWARE.
     <include>
       <name>tag_width_left</name>
       <uri>model://tag36_11_00004</uri>
-      <pose>-0.362 0 0.135 0 0 3.14</pose>
+      <pose>-0.362 0 0.145 0 0 3.14</pose>
       <static>false</static>
     </include>
     <joint name="tag_width_left_joint" type="fixed">
@@ -261,7 +185,7 @@ SOFTWARE.
       <parent>box</parent>
     </joint>
 
-    <static>0</static>
+    <static>1</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>

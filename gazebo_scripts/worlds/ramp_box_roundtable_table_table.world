@@ -1360,7 +1360,7 @@ SOFTWARE.
     <include>
       <name>table_tag_1</name>
       <uri>model://tag36_11_00005</uri>
-      <pose>-4.25 -1.2 0.485 0 0 1.57</pose>
+      <pose>-4.25 -1.2 0.535 0 0 1.57</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
@@ -1370,7 +1370,7 @@ SOFTWARE.
     <include>
       <name>table_tag_2</name>
       <uri>model://tag36_11_00006</uri>
-      <pose>-3.31 -2.05 0.485 0 0 3.14</pose>
+      <pose>-3.31 -2.05 0.535 0 0 3.14</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
