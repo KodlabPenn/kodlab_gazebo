@@ -1343,7 +1343,7 @@ SOFTWARE.
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose frame=''>-1.95 -2.05 -0.125 0 -0 0</pose>
+      <pose frame=''>-1.95 -3.05 -0.125 0 -0 0</pose>
     </model>
     <include>
       <name>ramp</name>
@@ -1365,12 +1365,12 @@ SOFTWARE.
     </include>
     <joint name="tag_table_joint" type="fixed">
       <child>table_tag_1::link</child>
-      <parent>table_conference_2::link_3</parent>
+      <parent>table_conference_1::link_3</parent>
     </joint>
     <include>
       <name>table_tag_2</name>
       <uri>model://tag36_11_00006</uri>
-      <pose>-3.31 -2.05 0.535 0 0 3.14</pose>
+      <pose>-3.31 -3.05 0.535 0 0 3.14</pose>
       <static>true</static>
     </include>
     <joint name="tag_table_joint" type="fixed">
