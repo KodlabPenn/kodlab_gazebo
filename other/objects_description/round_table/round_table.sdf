@@ -31,14 +31,14 @@ SOFTWARE.
     <link name='rim'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <mass>10</mass>
+        <mass>20</mass>
         <inertia>
-          <ixx>0.09313</ixx>
+          <ixx>0.18313</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.09313</iyy>
+          <iyy>0.18313</iyy>
           <iyz>0</iyz>
-          <izz>0.18625</izz>
+          <izz>0.36625</izz>
         </inertia>
         <pose frame=''>0 0 0.0815 0 -0 0</pose>
       </inertial>
