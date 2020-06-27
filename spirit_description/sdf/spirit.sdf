@@ -27,7 +27,7 @@ SOFTWARE.
 -->
 
 <sdf version='1.6'>
-  <model name='spirit40'>
+  <model name='spirit'>
     <link name='body'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
@@ -1137,7 +1137,7 @@ SOFTWARE.
     </joint>
     <static>0</static>
     <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
-      <robotNamespace>/spirit40</robotNamespace>
+      <robotNamespace>/spirit</robotNamespace>
     </plugin>
   </model>
 </sdf>

@@ -27,7 +27,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 -->
 
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="spirit40">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="spirit">
 
 	<!-- Define parameters -->
 	<!-- bodyLength + hipdx should be equal to front to back hip distance -->
@@ -332,7 +332,7 @@ SOFTWARE.
 	<!-- Add ros_control plugin -->
 	<gazebo>
   		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-    		<robotNamespace>/spirit40</robotNamespace>
+    		<robotNamespace>/spirit</robotNamespace>
   		</plugin>
 	</gazebo>
 </robot>

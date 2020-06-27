@@ -25,7 +25,7 @@ SOFTWARE.
 -->
 
 <launch>
-  <!-- Launch the Spirit40 world with specific physics parameters -->
+  <!-- Launch the Spirit world with specific physics parameters -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
     <arg name="world_name" value="$(find gazebo_scripts)/worlds/ghost.world"/>
@@ -34,13 +34,13 @@ SOFTWARE.
   </include>
 
   <!-- Distinguish between URDF description for control and SDF description for simulation -->
-  <param name="robot_description" textfile="$(find spirit40_description)/urdf/spirit40_gazebo.urdf" />
-  <param name="robot_description_sdf" textfile="$(find spirit40_description)/sdf/spirit40.sdf" />
+  <param name="robot_description" textfile="$(find spirit_description)/urdf/spirit_gazebo.urdf" />
+  <param name="robot_description_sdf" textfile="$(find spirit_description)/sdf/spirit.sdf" />
 
   <!-- Spawn SDF model -->
-  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model spirit40 -x 0 -y 0.0 -z 1.0" output="screen"/>
+  <node name="spawn_sdf_model" pkg="gazebo_ros" type="spawn_model" args="-sdf -param robot_description_sdf -model spirit -x 0 -y 0.0 -z 1.0" output="screen"/>
 
   <!-- Launch ros_controllers -->
-  <rosparam file="$(find gazebo_scripts)/config/spirit40_control.yaml" command="load"/>
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/spirit40" args="joint_state_controller joint0_effort_controller joint1_effort_controller joint2_effort_controller joint3_effort_controller joint4_effort_controller joint5_effort_controller joint6_effort_controller joint7_effort_controller joint8_effort_controller joint9_effort_controller joint10_effort_controller joint11_effort_controller"/>
+  <rosparam file="$(find gazebo_scripts)/config/spirit_control.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/spirit" args="joint_state_controller joint0_effort_controller joint1_effort_controller joint2_effort_controller joint3_effort_controller joint4_effort_controller joint5_effort_controller joint6_effort_controller joint7_effort_controller joint8_effort_controller joint9_effort_controller joint10_effort_controller joint11_effort_controller"/>
 </launch>
