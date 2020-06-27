@@ -6,7 +6,7 @@ Maintainer: Vasileios Vasilopoulos (<vvasilo@seas.upenn.edu>)
 ## General notes
 1. This ROS package can be used in conjunction with the Ghost Robotics SDK artifacts, which are independently distributed by Ghost Robotics.
 2. At this point, there is no open source Vision60 control example in the SDK, but once released the following procedure should be identical. For now, you can just launch the Vision60 simulation as explained below.
-3. The simulation depends a lot on friction parameters. These parameters can be configured in the URDF xacro files ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro), [vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro) and [spirit40_gazebo.urdf.xacro](spirit40_description/urdf/spirit40_gazebo.urdf.xacro)).
+3. The simulation depends a lot on friction parameters. These parameters can be configured in the URDF xacro files ([minitaur_gazebo.urdf.xacro](minitaur_description/urdf/minitaur_gazebo.urdf.xacro), [vision60_gazebo.urdf.xacro](vision60_description/urdf/vision60_gazebo.urdf.xacro) and [spirit_gazebo.urdf.xacro](spirit_description/urdf/spirit_gazebo.urdf.xacro)).
 
 ## Running the simulation
 1. For the package to work properly, make sure you have installed the following packages:
@@ -23,7 +23,7 @@ $ cp -r <artifacts_location>/thirdparty/kodlab_gazebo <catkin_ws_location>/src
 
 4. The following line needs to be added in `~/.bashrc` to allow for proper Gazebo model detection
 ```
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description:<catkin_ws_location>/src/kodlab_gazebo/vision60_description:<catkin_ws_location>/src/kodlab_gazebo/spirit40_description
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description/sdf:<catkin_ws_location>/src/kodlab_gazebo/minitaur_description:<catkin_ws_location>/src/kodlab_gazebo/vision60_description:<catkin_ws_location>/src/kodlab_gazebo/spirit_description
 ```
 
 5. Also, the following line needs to be added in `~/.bashrc` to allow for proper use of [3DGEMS](http://data.nvision2.eecs.yorku.ca/3DGEMS/)
@@ -53,9 +53,9 @@ $ roslaunch gazebo_scripts vision60_gazebo.launch
 ```
 for Vision60, or
 ```
-$ roslaunch gazebo_scripts spirit40_gazebo.launch
+$ roslaunch gazebo_scripts spirit_gazebo.launch
 ```
-for Spirit40.
+for Spirit.
 
 9. (Optional) If you want to control the robot using the Ghost SDK, compile and run the corresponding Ghost Robotics SDK script. For this, please use the [Makefile example](extras/Makefile) provided here (the format might change in the future). The simulation exposes 3 ROS topics for control: `/behaviorId`, `/behaviorMode` and `/twist`, and several others for checking the robot state: `/<robot_name>/state/imu`, `/<robot_name>/state/batteryState`, `/<robot_name>/state/behaviorId`, `/<robot_name>/state/behaviorMode`, `/<robot_name>/state/joint`, `/<robot_name>/state/pose`. As an example following the Ghost Robotics SDK FirstHop example for Minitaur, the overall process should look like that:
 ```
@@ -291,14 +291,14 @@ After the conversion:
 ```
 2. Make sure to move the SDF file to the [vision60 SDF folder](vision60_description/sdf) and rename it to vision60.sdf.
 
-## Converting Spirit40's URDF to SDF
-We have a URDF xacro file ([spirit40_gazebo.urdf.xacro](spirit40_description/urdf/spirit40_gazebo.urdf.xacro)) in the urdf folder that can be converted to URDF with
+## Converting Spirit's URDF to SDF
+We have a URDF xacro file ([spirit_gazebo.urdf.xacro](spirit_description/urdf/spirit_gazebo.urdf.xacro)) in the urdf folder that can be converted to URDF with
 ```bash
-$ python xacro.py spirit40_gazebo.urdf.xacro > spirit40_gazebo.urdf
+$ python xacro.py spirit_gazebo.urdf.xacro > spirit_gazebo.urdf
 ```
 and subsequently to SDF using
 ```bash
-$ gz sdf -p spirit40_gazebo.urdf > ../sdf/spirit40.sdf
+$ gz sdf -p spirit_gazebo.urdf > ../sdf/spirit.sdf
 ```
 
 After the conversion:
@@ -311,7 +311,7 @@ After the conversion:
     </contact>
 </sensor>
 ```
-2. Make sure to move the SDF file to the [spirit40 SDF folder](spirit40_description/sdf) and rename it to spirit40.sdf.
+2. Make sure to move the SDF file to the [spirit SDF folder](spirit_description/sdf) and rename it to spirit.sdf.
 
 ## Other
 
