@@ -57,6 +57,6 @@ double child_frame_yaw;
 
 // Declare global variables
 bool flag_first = true;
-tf::Vector3 position_first;
+tf::Pose odom_to_global;
 tf::Vector3 odom_to_global_pos;
 tf::Quaternion odom_to_global_rot;
