@@ -48,27 +48,35 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
 		}
 	}
 
-    // Find rotation of robot in the global frame
-	tf::Quaternion robot_to_global = tf::Quaternion(msg->pose[des_index].orientation.x,
-						  				  	        msg->pose[des_index].orientation.y,
-						  				  	        msg->pose[des_index].orientation.z,
-						  				  	        msg->pose[des_index].orientation.w);
+    // Find orientation and position of robot in the global frame
+	tf::Quaternion robot_to_global_orientation_quaternion = tf::Quaternion(msg->pose[des_index].orientation.x,
+						  				  	                               msg->pose[des_index].orientation.y,
+						  				  	                               msg->pose[des_index].orientation.z,
+						  				  	                               msg->pose[des_index].orientation.w);
+    tf::Matrix3x3 robot_to_global_orientation = tf::Matrix3x3(robot_to_global_orientation_quaternion);
+    tf::Vector3 robot_to_global_position = tf::Vector3(msg->pose[des_index].position.x, msg->pose[des_index].position.y, msg->pose[des_index].position.z);
 
-    // Find rotation of child in the robot frame
-    tf::Matrix3x3 m;
-    m.setRPY(child_frame_roll, child_frame_pitch, child_frame_yaw);
-    tf::Quaternion child_to_robot;
-	m.getRotation(child_to_robot);
+    // Find robot pose in the global frame
+    tf::Pose robot_to_global = tf::Pose(robot_to_global_orientation, robot_to_global_position);
+
+    // Find orientation and position of child in the robot frame
+    tf::Matrix3x3 child_to_robot_orientation;
+    child_to_robot_orientation.setRPY(child_frame_roll, child_frame_pitch, child_frame_yaw);
+    tf::Vector3 child_to_robot_position = tf::Vector3(child_frame_x, child_frame_y, child_frame_z);
+
+    // Find child pose in the robot frame
+    tf::Pose child_to_robot = tf::Pose(child_to_robot_orientation, child_to_robot_position);
 
     // Store the first pose of the odom frame in the global Gazebo frame - Runs only once
     if (flag_first) {
-        odom_to_global_pos = tf::Vector3(msg->pose[des_index].position.x + child_frame_x, msg->pose[des_index].position.y + child_frame_y, msg->pose[des_index].position.z + child_frame_z);
-        odom_to_global_rot = robot_to_global*child_to_robot;
+        odom_to_global = robot_to_global * child_to_robot;
+        odom_to_global_pos = odom_to_global.getOrigin();
+        odom_to_global_rot = odom_to_global.getRotation();
         flag_first = false;
     }
 
-    // Find orientation of child frame in odom frame
-    tf::Quaternion child_to_odom = odom_to_global_rot.inverse()*robot_to_global*child_to_robot;
+    // Find pose of child frame in odom frame
+    tf::Pose child_to_odom = odom_to_global.inverse()*robot_to_global*child_to_robot;
 
     // Initialize Odometry message
     nav_msgs::Odometry msg_odometry;
@@ -77,32 +85,26 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
     msg_odometry.header.stamp = ros::Time::now();
     msg_odometry.header.frame_id = odom_frame;
 
-    // Find position of child in the odom frame
-    tf::Vector3 vector_position(msg->pose[des_index].position.x, msg->pose[des_index].position.y, msg->pose[des_index].position.z);
-    tf::Vector3 rotated_position = tf::quatRotate(odom_to_global_rot.inverse(), vector_position);
-    tf::Vector3 rotated_p = tf::quatRotate(odom_to_global_rot.inverse(), odom_to_global_pos);
-    tf::Vector3 child_to_odom_pos = rotated_position - rotated_p;
-
     // Populate odometry message
     msg_odometry.child_frame_id = child_frame;
-    msg_odometry.pose.pose.position.x = child_to_odom_pos.getX();
-    msg_odometry.pose.pose.position.y = child_to_odom_pos.getY();
-    msg_odometry.pose.pose.position.z = child_to_odom_pos.getZ();
-    msg_odometry.pose.pose.orientation.x = child_to_odom.getX();
-    msg_odometry.pose.pose.orientation.y = child_to_odom.getY();
-    msg_odometry.pose.pose.orientation.z = child_to_odom.getZ();
-    msg_odometry.pose.pose.orientation.w = child_to_odom.getW();
+    msg_odometry.pose.pose.position.x = child_to_odom.getOrigin().getX();
+    msg_odometry.pose.pose.position.y = child_to_odom.getOrigin().getY();
+    msg_odometry.pose.pose.position.z = child_to_odom.getOrigin().getZ();
+    msg_odometry.pose.pose.orientation.x = child_to_odom.getRotation().getX();
+    msg_odometry.pose.pose.orientation.y = child_to_odom.getRotation().getY();
+    msg_odometry.pose.pose.orientation.z = child_to_odom.getRotation().getZ();
+    msg_odometry.pose.pose.orientation.w = child_to_odom.getRotation().getW();
 
 	// Get angular twist
 	tf::Vector3 vector_angular(msg->twist[des_index].angular.x, msg->twist[des_index].angular.y, msg->twist[des_index].angular.z);
-	tf::Vector3 rotated_vector_angular = tf::quatRotate((robot_to_global*child_to_robot).inverse(), vector_angular);
+	tf::Vector3 rotated_vector_angular = tf::quatRotate(((robot_to_global*child_to_robot).inverse()).getRotation(), vector_angular);
 	msg_odometry.twist.twist.angular.x = rotated_vector_angular.getX();
 	msg_odometry.twist.twist.angular.y = rotated_vector_angular.getY();
 	msg_odometry.twist.twist.angular.z = rotated_vector_angular.getZ();
 
 	// Get linear twist
 	tf::Vector3 vector_linear(msg->twist[des_index].linear.x, msg->twist[des_index].linear.y, msg->twist[des_index].linear.z);
-	tf::Vector3 rotated_vector_linear = tf::quatRotate((robot_to_global*child_to_robot).inverse(), vector_linear);
+	tf::Vector3 rotated_vector_linear = tf::quatRotate(((robot_to_global*child_to_robot).inverse()).getRotation(), vector_linear);
 	msg_odometry.twist.twist.linear.x = rotated_vector_linear.getX();
 	msg_odometry.twist.twist.linear.y = rotated_vector_linear.getY();
 	msg_odometry.twist.twist.linear.z = rotated_vector_linear.getZ();
@@ -113,8 +115,8 @@ void modelCallback(const gazebo_msgs::LinkStates::ConstPtr& msg) {
     // Publish tf transform
     static tf::TransformBroadcaster br;
     tf::Transform transform;
-    transform.setOrigin(tf::Vector3(child_to_odom_pos.getX(), child_to_odom_pos.getY(), child_to_odom_pos.getZ()));
-    transform.setRotation(child_to_odom);
+    transform.setOrigin(tf::Vector3(child_to_odom.getOrigin().getX(), child_to_odom.getOrigin().getY(), child_to_odom.getOrigin().getZ()));
+    transform.setRotation(child_to_odom.getRotation());
     br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), odom_frame, child_frame));
 
 	return;
