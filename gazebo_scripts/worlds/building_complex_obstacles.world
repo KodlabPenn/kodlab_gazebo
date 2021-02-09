@@ -695,6 +695,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.25</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -722,6 +731,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -749,6 +767,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.26</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -776,6 +803,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.25</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -803,6 +839,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.23</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -830,6 +875,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -857,6 +911,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -884,6 +947,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -911,6 +983,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -938,6 +1019,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.17</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -965,6 +1055,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.22</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -992,6 +1091,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.27</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1019,6 +1127,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.17</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1046,6 +1163,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.14</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1073,6 +1199,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.14</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1100,6 +1235,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.14</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1127,6 +1271,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1154,6 +1307,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1181,6 +1343,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1208,6 +1379,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1235,6 +1415,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1262,6 +1451,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1289,6 +1487,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1316,6 +1523,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.22</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1343,6 +1559,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.14</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1370,6 +1595,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.2</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1397,6 +1631,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.18</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1424,6 +1667,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.18</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1451,6 +1703,15 @@ SOFTWARE.
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
         </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.25</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
