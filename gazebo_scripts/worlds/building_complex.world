@@ -857,7 +857,7 @@ SOFTWARE.
             <save enabled="true">
               <path>/home/kodlab/gazebo_camera_5</path>
             </save>
-            <horizontal_fov>2.0</horizontal_fov>
+            <horizontal_fov>1.7</horizontal_fov>
             <image>
               <width>1920</width>
               <height>1920</height>
