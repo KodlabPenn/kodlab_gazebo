@@ -239,7 +239,7 @@ SOFTWARE.
         <collision name='Wall_4_Collision'>
           <geometry>
             <box>
-              <size>0.1 5.5 2.5</size>
+              <size>0.1 3.5 2.5</size>
             </box>
           </geometry>
           <pose frame=''>0 0 1.25 0 -0 0</pose>
@@ -248,7 +248,7 @@ SOFTWARE.
           <pose frame=''>0 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.1 5.5 2.5</size>
+              <size>0.1 3.5 2.5</size>
             </box>
           </geometry>
           <material>
@@ -262,7 +262,7 @@ SOFTWARE.
             <layer>0</layer>
           </meta>
         </visual>
-        <pose frame=''>4.75 -2 0 0 -0 -1.5708</pose>
+        <pose frame=''>5.7 -2 0 0 -0 -1.5708</pose>
       </link>
       <link name='Wall_5a'>
         <collision name='Wall_5a_Collision'>
@@ -585,6 +585,42 @@ SOFTWARE.
           <geometry>
             <cylinder>
               <radius>0.3</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <lighting>1</lighting>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Black</name>
+            </script>
+            <shader type='pixel'/>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.3</radius>
+              <length>2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+    </model>
+
+    <model name='cylinder_9'>
+      <link name='link_0'>
+        <pose frame=''>1.7 -2.5 1 0 -0 0</pose>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.15</radius>
               <length>2</length>
             </cylinder>
           </geometry>
@@ -1482,14 +1518,14 @@ SOFTWARE.
     <include>
       <name>box_short</name>
       <uri>model://box_ramp</uri>
-      <pose>0.1 7.09 0.01 0 0 0</pose>
+      <pose>0.1 7.09 0.02 0 0 0</pose>
       <static>true</static>
     </include>
 
     <include>
       <name>box_tall</name>
       <uri>model://box_tall</uri>
-      <pose>-0.62 7.09 0.01 0 0 0</pose>
+      <pose>-0.62 7.09 0.02 0 0 0</pose>
       <static>true</static>
     </include>
 
