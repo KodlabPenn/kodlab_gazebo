@@ -40,7 +40,7 @@ SOFTWARE.
   <!-- Launch the minitaur world with specific physics parameters -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="paused" value="true"/>
-    <arg name="world_name" value="$(find gazebo_scripts)/worlds/building_wall2.world"/>
+    <arg name="world_name" value="$(find gazebo_scripts)/worlds/building_corridor_1obstacle.world"/>
     <arg name="gui" value="true"/>
     <arg name="physics" value="ode"/>
   </include>
